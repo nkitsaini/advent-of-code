@@ -1,6 +1,10 @@
 mod d1;
 mod constants;
+mod d2;
+
+const DAY: u8 = 1;
 
 fn main() {
-    d1::run();
+    let input = constants::get_input_file(DAY);
+    dbg!(d2::solve(input));
 }

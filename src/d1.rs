@@ -1,11 +1,4 @@
-use crate::constants;
-
-pub fn run() {
-    let input = constants::get_input_file(1);
-    dbg!(solve(input));
-}
-
-fn solve(input: String) -> u64 {
+pub fn solve(input: String) -> u64 {
     let mut current_energy = Vec::<u64>::new();
     let mut elf_energies: Vec<u64> = vec![];
     for line in input.lines() {
