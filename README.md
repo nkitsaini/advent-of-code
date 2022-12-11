@@ -1,5 +1,5 @@
 # Advent of Code 2022
-Here is the solution code for advent of code 2022.
+Here is my solution code for Advent of Code 2022.
 
 - Code is not optimized for speed unless required
 - Code is not optimized for readability
