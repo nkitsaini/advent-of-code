@@ -1,4 +1,5 @@
 from typing import *
+from functools import cache
 import math
 from dataclasses import dataclass
 from pprint import pprint
@@ -18,6 +19,50 @@ directions = {
     'D': (0, -1)
 }
 
+@cache
+def _sub_helper(remains: Tuple[int]) -> int:
+    all_divs = [m.test_div for m in monkeys]
+    print(remains)
+    for subs in range(1, 100000000):
+        remains_ = tuple(subs%d for d in all_divs)
+        if remains_ == remains:
+            return subs
+
+@cache
+def _sub_helper2(remains: Tuple[int]) -> int:
+    all_divs = [m.test_div for m in monkeys]
+    max_div_i = max(range(len(all_divs)), key=lambda i: all_divs[i])
+    max_div = all_divs[max_div_i]
+    max_div_remain = remains[max_div_i]
+    for subs in range(max_div_remain, 100000000, max_div):
+        not_good = False
+        for i in range(len(all_divs)):
+            if subs%all_divs[i] != remains[i]:
+                not_good = True
+                break
+        if not not_good:
+            return subs
+        remains_ = tuple(subs%d for d in all_divs)
+        if remains_ == remains:
+            return subs
+
+    # print(remains)
+    # for subs in range(1, 100000000):
+    #     remains_ = tuple(subs%d for d in all_divs)
+    #     if remains_ == remains:
+    #         return subs
+
+def get_substitute(value: int) -> int:
+    all_divs = [m.test_div for m in monkeys]
+    remains = [value%d for d in all_divs]
+    return _sub_helper2(tuple(remains))
+    return _sub_helper(tuple(remains))
+    # for subs in range(1, 100000):
+    #     remains_ = [subs%d for d in all_divs]
+    #     if remains_ == remains:
+    #         return subs
+
+
 @dataclass
 class Monkey:
     id: int
@@ -31,6 +76,15 @@ class Monkey:
         old = self.items[i]
         opr = self.opr.replace('new = ', '')
         new = eval(opr.strip())
+        if 'old * old' in self.opr:
+            new = get_substitute(new)
+            # all_divs = [m.test_div for m in monkeys]
+            # remains = [new%d for d in all_divs]
+            # for subs in range(1, 100000):
+            #     remains_ = [subs%d for d in all_divs]
+            #     if remains_ == remains:
+            #         new = subs
+            #         break
         self.items[i] = new
     
 ans = 0
@@ -67,14 +121,13 @@ while True:
 
 inspect_counts = defaultdict(int)
 pprint(monkeys)
-for rid in range(20):
-# for rid in range(1):
+for rid in range(10000):
     print("===================", rid)
     for mid, monkey in  enumerate(monkeys):
         for i, _ in enumerate(monkey.items):
             inspect_counts[mid] += 1
             monkey.operate(i)
-            monkey.items[i] = monkey.items[i] // 3
+            # monkey.items[i] //= 3
             test_val = (monkey.items[i] % (monkey.test_div)) == 0
             if test_val:
                 # print("Throwing", monkey.items[i], "to monkey", monkey.test_true_monkey)
@@ -84,9 +137,7 @@ for rid in range(20):
                 monkeys[monkey.test_false_monkey].items.append(monkey.items[i])
         print("DONE MONEKY", mid)
         monkey.items = []
-    pprint(monkeys)
 
-# print(monkeys[0].operate(3))
 print(inspect_counts)
 two_max = sorted(inspect_counts.values())[-2:]
 print(two_max[0]*two_max[1])
