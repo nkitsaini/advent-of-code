@@ -3,7 +3,7 @@ Here is my solution code for Advent of Code 2022.
 
 - Code is not optimized for speed unless required
 - Code is not optimized for readability
-- I might comment the code once AoC ends, to explain my though process around different decisions
+- I might comment the code once AoC ends, to explain my thought process around different decisions
 - Most of the times the solution of part-2 is also written in file for part-1.
 
 # Directory structure
