@@ -25,6 +25,7 @@ py/              # Python solutions for day3 and onwards
 	d11/
 		first.py
 		second.py
+		second-2.py # alternate implementation of part-2 when I still want to keep the initial implementation
 		data 
 		sample
 		
