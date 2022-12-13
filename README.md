@@ -31,3 +31,6 @@ py/              # Python solutions for day3 and onwards
 		sample
 		
 ```
+
+# Daily Leaderboard top 100
+- https://adventofcode.com/2022/leaderboard/day/13 (94)
