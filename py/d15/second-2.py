@@ -1,7 +1,6 @@
 from typing import *
 import re
 # import rangetreefrom rangetree import RangeTree
-from rangetree import RangeTree
 from intervaltree import Interval, IntervalTree
 
 from functools import cmp_to_key
