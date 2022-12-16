@@ -56,8 +56,11 @@ for vavls in valves.values():
     if vavls[0] != 0:
         all_valves_open += 1<<vavls[2]
 
-@lru_cache(1000000000)
-def get_max_pressure(remaining_time: int = 26, my_valve: str = 'AA', elephant_valve: str = 'AA', open_bits: int = 0):
+total_valve_score = sum(v[0] for v in valves.values())
+
+@lru_cache(10000000000)
+def get_max_pressure(remaining_time: int = 12, my_valve: str = 'AA', elephant_valve: str = 'AA', open_bits: int = 0):
+    global total_valve_score
     assert open_bits <= all_valves_open
     if open_bits == all_valves_open:
         return 0
@@ -69,6 +72,10 @@ def get_max_pressure(remaining_time: int = 26, my_valve: str = 'AA', elephant_va
 
     for my_option in [0, *vlv[my_valve][1]]:
         for elephent_option in [0, *vlv[elephant_valve][1]]:
+            # if (total_valve_score * (remaining_time -1) <= max_pressure):
+            #     # print('yes')
+            #     break
+            #     continue
             if my_option == 0 and not (1<<vlv[my_valve][2] & open_bits == 0 and vlv[my_valve][0] != 0):
                 continue
             if elephent_option == 0 and not (1<<vlv[elephant_valve][2] & open_bits == 0 and vlv[elephant_valve][0] != 0):
@@ -79,16 +86,20 @@ def get_max_pressure(remaining_time: int = 26, my_valve: str = 'AA', elephant_va
                 continue
 
             def do(option, valve, open_bits) -> Tuple[str, int]:
+                global total_valve_score
                 if option == 0:
                     new_pressure = (remaining_time - 1) *  vlv[valve][0]
                     open_bits += 1<<vlv[valve][2]
+                    total_valve_score -= vlv[valve][0]
                     return valve, open_bits, new_pressure
                 else:
                     return option, open_bits, 0
 
 
             def revert(option, valve, open_bits) -> open_bits:
+                global total_valve_score
                 if option == 0:
+                    total_valve_score += vlv[valve][0]
                     open_bits -= 1<<vlv[valve][2]
                 return open_bits
 
@@ -102,17 +113,26 @@ def get_max_pressure(remaining_time: int = 26, my_valve: str = 'AA', elephant_va
 
     return max_pressure
 
-            
-    if 1<<vlv[valve][2] & open_bits == 0 and vlv[valve][0] != 0:
-        new_pressure = (remaining_time - 1) *  vlv[valve][0]
-        open_bits += 1<<vlv[valve][2]
-        max_pressure = max(max_pressure, new_pressure + get_max_pressure(remaining_time-1, valve, open_bits))
-        open_bits -= 1<<vlv[valve][2]
+    # if el_turn:
+    #     valve = elephant_valve
+    #     rmt = remaining_time 
+    #     ov = my_valve
+    # else:
+    #     valve = my_valve
+    #     rmt = remaining_time -1
+    #     ov = elephant_valve
+ 
 
-    for next_valve in vlv[valve][1]:
-        max_pressure = max(max_pressure, get_max_pressure(remaining_time-1, next_valve, open_bits))
+    # if 1<<vlv[valve][2] & open_bits == 0 and vlv[valve][0] != 0:
+    #     new_pressure = (remaining_time - 1) *  vlv[valve][0]
+    #     open_bits += 1<<vlv[valve][2]
+    #     max_pressure = max(max_pressure, new_pressure + get_max_pressure(rmt, not el_turn, valve, open_bits))
+    #     open_bits -= 1<<vlv[valve][2]
 
-    return max_pressure
+    # for next_valve in vlv[valve][1]:
+    #     max_pressure = max(max_pressure, get_max_pressure(rmt, not el_turn, next_valve, open_bits))
+
+    # return max_pressure
 
 
 print(get_max_pressure())
