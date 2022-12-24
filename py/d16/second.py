@@ -4,7 +4,6 @@ from copy import deepcopy
 import re
 from functools import cmp_to_key
 import math
-import intervaltree
 from dataclasses import dataclass
 from pprint import pprint
 from collections import defaultdict
@@ -56,10 +55,14 @@ for vavls in valves.values():
     if vavls[0] != 0:
         all_valves_open += 1<<vavls[2]
 
+for _, v, _ in valves.values():
+    v.sort(key=lambda x: valves[x][0])
+# print("total", sum([1 for x in valves.values() if x[0] > 0]))
+# exit()
 total_valve_score = sum(v[0] for v in valves.values())
 
 @lru_cache(10000000000)
-def get_max_pressure(remaining_time: int = 12, my_valve: str = 'AA', elephant_valve: str = 'AA', open_bits: int = 0):
+def get_max_pressure(remaining_time: int = 26, my_valve: str = 'AA', elephant_valve: str = 'AA', open_bits: int = 0, my_visits: int = 0, elm_visits = 0):
     global total_valve_score
     assert open_bits <= all_valves_open
     if open_bits == all_valves_open:
@@ -84,6 +87,7 @@ def get_max_pressure(remaining_time: int = 12, my_valve: str = 'AA', elephant_va
                 continue
             if my_option == elephent_option and my_option != 0:
                 continue
+            
 
             def do(option, valve, open_bits) -> Tuple[str, int]:
                 global total_valve_score
@@ -105,9 +109,17 @@ def get_max_pressure(remaining_time: int = 12, my_valve: str = 'AA', elephant_va
 
             nv, no, np =do(my_option, my_valve, open_bits)
             nv2, no2, np2 = do(elephent_option, elephant_valve, no)
+            if my_option == 0:
+                my_n_v = 0
+            else:
+                my_n_v = my_visits | (1<<valves[my_valve][2])
+            if elephent_option == 0:
+                el_n_v = 0
+            else:
+                el_n_v = elm_visits | (1<<valves[elephant_valve][2])
             # print(nv, nv2)
             [nv, nv2] = sorted([nv, nv2])
-            max_pressure = max(max_pressure, np+np2+get_max_pressure(remaining_time-1, nv, nv2, no2))
+            max_pressure = max(max_pressure, np+np2+get_max_pressure(remaining_time-1, nv, nv2, no2, my_n_v, el_n_v))
             ob = revert(my_option, my_valve, no2)
             open_bits = revert(elephent_option, elephant_valve, ob)
 

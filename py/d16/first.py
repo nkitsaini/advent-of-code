@@ -27,6 +27,11 @@ directions = {
 }
 
 valves = {}
+# total_runs = 0
+# for i in range(0, 16):
+#     my_opens = i
+#     elp_opens = 15 - i
+#     ...
 
 ans = 0
 
@@ -43,7 +48,7 @@ while True:
     valves[match.group(1)] = [int(match.group(2)), match.group(3).replace(' ', '').split(','), i]
 
     i += 1
-    line
+
 print(valves)
 
 vlv = deepcopy(valves)
