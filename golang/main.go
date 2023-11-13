@@ -175,7 +175,24 @@ func findNonHelpfulValves(valves map[string]ValveWithIdx) map[string]bool {
 	return nonHelpful
 }
 
-func main() {
+func readAllInput() []string {
+	reader := bufio.NewReader(os.Stdin)
+	rv := []string{}
+	for {
+		var input string
+		input, error := reader.ReadString('\n')
+		if error != nil {
+			if errors.Is(error, io.EOF) {
+				break
+			}
+			panic(error)
+		}
+		rv = append(rv, input)
+	}
+	return rv
+}
+
+func d16() {
 	valves := map[string]ValveWithIdx{}
 	reader := bufio.NewReader(os.Stdin)
 	valveNo := 0
@@ -204,4 +221,9 @@ func main() {
 	ans := getMostPressureReleaseable(26, "AA", "AA", 0, valves, dp, nonHelpful)
 
 	fmt.Println(ans)
+}
+
+func main() {
+	// d21()
+	d22()
 }
