@@ -176,7 +176,12 @@ func findNonHelpfulValves(valves map[string]ValveWithIdx) map[string]bool {
 }
 
 func readAllInput() []string {
-	reader := bufio.NewReader(os.Stdin)
+	// reader := bufio.NewReader(os.Stdin)
+	f, err := os.Open("d22_data_small")
+	if err != nil {
+		panic(err)
+	}
+	reader := bufio.NewReader(f)
 	rv := []string{}
 	for {
 		var input string

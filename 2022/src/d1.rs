@@ -10,6 +10,8 @@ pub fn solve(input: String) -> u64 {
         }
     }
     elf_energies.sort();
-    dbg!(elf_energies[elf_energies.len()-3..].iter().collect::<Vec<_>>());
-    elf_energies[elf_energies.len()-3..].iter().sum()
+    dbg!(elf_energies[elf_energies.len() - 3..]
+        .iter()
+        .collect::<Vec<_>>());
+    elf_energies[elf_energies.len() - 3..].iter().sum()
 }
