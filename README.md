@@ -1,5 +1,5 @@
-# Advent of Code 2022
-Here is my solution code for Advent of Code 2022.
+# Advent of Code
+Here is my solution code for Advent of Code 2022 and 2023.
 
 - Code is not optimized for speed unless required
 - Code is not optimized for readability
@@ -8,29 +8,11 @@ Here is my solution code for Advent of Code 2022.
 - Most of the times the solution of part-2 is also written in file for part-1.
 
 # Directory structure
-```
-inputs/    # All the input files
-src/       # Rust solution for day1 and day2
-py/              # Python solutions for day3 and onwards
-	d1.py    # Solution for part 1 day1
-	d1-2.py  # Solution for part 2 day1 (Most of the time I use d1.py itself for part-2 also)
-	d2.py
-	d2-2.py 
-	...  
-	# Switched to different folder structure after day9
-	d10/
-		first.py # solution to part-1 day10
-		second.py # solution to part-2 day10 (Again this might be empty file, in that case you can find code in first.py itself)
-		data      # input data
-		sample    # input data from example
-	d11/
-		first.py
-		second.py
-		second-2.py # alternate implementation of part-2 when I still want to keep the initial implementation
-		data 
-		sample
-		
-```
+For 2022 it is very messed up. For 2023, you can find data files and code in `2023/day1`, `2023/day2` and similar.
 
 # Daily Leaderboard top 100
+## 2022
 - https://adventofcode.com/2022/leaderboard/day/13 (94)
+
+## 2023
+- https://adventofcode.com/2023/leaderboard/day/1 (65)
