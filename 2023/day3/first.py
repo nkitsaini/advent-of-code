@@ -44,6 +44,8 @@ def main():
             if not char.isdigit():
                 if digit != "" and not adjacent:
                     ans += int(digit)
+                digit = ""
+                adjacent = False
                     
             if char.isdigit():
                 is_digit = True
