@@ -82,6 +82,7 @@ def main():
 
     
 
+    print(GEAR_VALUES)
     for val in GEAR_VALUES.values():
         a = 1
         for x in val:
