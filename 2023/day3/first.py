@@ -82,11 +82,14 @@ def main():
 
     
 
+    sets = set()
     # wrong = 13121332
     for k, val in GEAR_VALUES.items():
         if len(val) != 2:
             continue
         print(k, val)
+        if tuple(val) in sets:
+            continue
         ans += val[0] * val[1]
     
 
