@@ -49,7 +49,9 @@ def main():
                     
             if char.isdigit():
                 digit += char
-                is_digit = True
+                for dx, dy in DIRECTIONS:
+                    nidx = idx + dx
+                    ncidx = cidx + dy
 
         if digit != "" and not adjacent:
             ans += int(digit)
