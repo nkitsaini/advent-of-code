@@ -56,6 +56,7 @@ def main():
                         adjacent = True
 
         if digit != "" and not adjacent:
+            print(digit)
             ans += int(digit)
 
         
