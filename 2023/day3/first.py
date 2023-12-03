@@ -82,16 +82,12 @@ def main():
 
     
 
+    # wrong = 13121332
     for k, val in GEAR_VALUES.items():
         if len(val) != 2:
             continue
         print(k, val)
-        a = 1
-        # ans += val[0] * val[1]
-        for x in val:
-            a *= x
-        ans += a
-
+        ans += val[0] * val[1]
     
 
 
