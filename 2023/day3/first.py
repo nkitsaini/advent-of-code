@@ -59,7 +59,7 @@ def main():
                     for dy in [1, 0, -1]:
                         nidx = idx + dx
                         ncidx = cidx + dy
-                        if nidx >=0 and ncidx >=0 and nidx < len(lines) and ncidx < len(line) and not lines[nidx][ncidx].isdigit() and lines[nidx][ncidx] != '.':
+                        if nidx >=0 and ncidx >=0 and nidx < len(lines) and ncidx < len(line) and not lines[nidx][ncidx].isdigit() and lines[nidx][ncidx] != '*':
                             adjacent = True
 
         if digit != "" and adjacent:
