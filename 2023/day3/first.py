@@ -60,6 +60,7 @@ def main():
                         nidx = idx + dx
                         ncidx = cidx + dy
                         if nidx >=0 and ncidx >=0 and nidx < len(lines) and ncidx < len(line) and not lines[nidx][ncidx].isdigit() and lines[nidx][ncidx] == '*':
+                            gear_idx.append((nidx, ncidx))
                             adjacent = True
 
         if digit != "" and adjacent:
