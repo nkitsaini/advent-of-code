@@ -84,6 +84,8 @@ def main():
 
     print(GEAR_VALUES)
     for val in GEAR_VALUES.values():
+        if len(val) == 1:
+            continue
         a = 1
         for x in val:
             a *= x
