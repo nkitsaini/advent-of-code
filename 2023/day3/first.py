@@ -84,7 +84,7 @@ def main():
 
     print(GEAR_VALUES)
     for val in GEAR_VALUES.values():
-        if len(val) == 1:
+        if len(val) != 2:
             continue
         a = 1
         for x in val:
