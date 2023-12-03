@@ -36,12 +36,20 @@ def main():
 
 
     
+    ans = 0
     for idx, line in enumerate(lines):
 
-        is_digit = False
+        digit = ""
+        adjacent = False
         for cidx, char in enumerate(line):
+            if !char.is_digit():
+                if digit != "" && adjacent:
+
+
+                    
             if char.isdigit():
                 is_digit = True
+
         
         loc_ans = 0
         
