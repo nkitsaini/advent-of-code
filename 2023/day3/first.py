@@ -54,7 +54,7 @@ def main():
                     
             if char.isdigit():
                 digit += char
-                for dx, dy in DIRECTIONS:
+                for dx in [1, 0, -1]:
                     nidx = idx + dx
                     ncidx = cidx + dy
                     if nidx >=0 and ncidx >=0 and nidx < len(lines) and ncidx < len(line) and not lines[nidx][ncidx].isdigit() and lines[nidx][ncidx] != '.':
