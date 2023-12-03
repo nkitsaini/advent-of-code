@@ -87,9 +87,9 @@ def main():
             continue
         print(k, val)
         a = val[0] * val[1]
-        for x in val:
-            a *= x
-        ans += a
+        # for x in val:
+        #     a *= x
+        # ans += a
 
     
 
