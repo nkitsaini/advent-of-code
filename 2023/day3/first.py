@@ -29,6 +29,8 @@ def main():
 
     
     for idx, line in enumerate(lines):
+
+        prev_line = "."* 1000
         loc_ans = 0
         
         
