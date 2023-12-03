@@ -38,6 +38,8 @@ def main():
     
     for idx, line in enumerate(lines):
 
+        for cidx, char in enumerate(line):
+            if char == ""
         
         loc_ans = 0
         
