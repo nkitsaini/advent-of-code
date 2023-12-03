@@ -41,7 +41,6 @@ def main():
 
     
     for idx, line in enumerate(lines):
-
         digit = ""
         adjacent = False
         for cidx, char in enumerate(line):
