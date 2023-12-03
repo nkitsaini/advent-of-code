@@ -38,7 +38,7 @@ def main():
 
     # Solve
 
-    GEAR_VALUES = {}
+    GEAR_VALUES = defaultdict()
 
     
     for idx, line in enumerate(lines):
