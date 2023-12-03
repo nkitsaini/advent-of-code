@@ -71,6 +71,7 @@ def main():
             for gear_i in gear_idx:
                 GEAR_VALUES[gear_i].append(int(digit))
 
+
         
         loc_ans = 0
         
@@ -81,6 +82,11 @@ def main():
 
     
 
+    for val in GEAR_VALUES.values():
+        a = 1
+        for x in val:
+            a *= x
+        ans += a
 
     
 
