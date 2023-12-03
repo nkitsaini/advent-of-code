@@ -36,14 +36,14 @@ def main():
 
 
     
-    ans = 0
     for idx, line in enumerate(lines):
 
         digit = ""
         adjacent = False
         for cidx, char in enumerate(line):
             if !char.is_digit():
-                if digit != "" && adjacent:
+                if digit != "" and not adjacent:
+                    ans += int(digit)
 
 
                     
