@@ -38,6 +38,7 @@ def main():
 
     # Solve
 
+    GEAR_VALUES = {}
 
     
     for idx, line in enumerate(lines):
