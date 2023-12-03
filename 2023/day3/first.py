@@ -38,9 +38,7 @@ def main():
     
     for idx, line in enumerate(lines):
 
-        prev_line = "."*1000
-        if idx != 0 :
-            prev_line = lines[i-1]
+        
         loc_ans = 0
         
         
