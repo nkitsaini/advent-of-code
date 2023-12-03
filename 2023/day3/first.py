@@ -42,7 +42,7 @@ def main():
 
     
     for idx, line in enumerate(lines):
-        gears = []
+        gear_idx = []
         digit = ""
         adjacent = False
         for cidx, char in enumerate(line):
