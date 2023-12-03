@@ -82,10 +82,10 @@ def main():
 
     
 
-    print(GEAR_VALUES)
-    for val in GEAR_VALUES.values():
+    for k, val in GEAR_VALUES.items():
         if len(val) != 2:
             continue
+        print(k, valR)
         a = 1
         for x in val:
             a *= x
