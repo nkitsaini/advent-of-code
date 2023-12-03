@@ -46,7 +46,7 @@ def main():
         adjacent = False
         for cidx, char in enumerate(line):
             if not char.isdigit():
-                if digit != "" and not adjacent:
+                if digit != "" and adjacent:
                     print(digit)
                     ans += int(digit)
                 digit = ""
@@ -61,7 +61,7 @@ def main():
                         if nidx >=0 and ncidx >=0 and nidx < len(lines) and ncidx < len(line) and not lines[nidx][ncidx].isdigit() and lines[nidx][ncidx] != '.':
                             adjacent = True
 
-        if digit != "" and not adjacent:
+        if digit != "" and adjacent:
             print(digit)
             ans += int(digit)
 
