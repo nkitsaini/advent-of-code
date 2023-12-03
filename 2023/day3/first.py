@@ -86,7 +86,7 @@ def main():
         if len(val) != 2:
             continue
         print(k, val)
-        a = 1
+        a = val[0] * val[1]
         for x in val:
             a *= x
         ans += a
