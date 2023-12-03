@@ -48,6 +48,7 @@ def main():
                 adjacent = False
                     
             if char.isdigit():
+                digit += char
                 is_digit = True
 
         if digit != "" and not adjacent:
