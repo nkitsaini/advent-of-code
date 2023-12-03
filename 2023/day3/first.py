@@ -50,6 +50,8 @@ def main():
                 if digit != "" and adjacent:
                     print(digit)
                     ans += int(digit)
+                    for gear_i in gear_idx:
+                        GEAR_VALUES[gear_i].append(int(digit))
                 digit = ""
                 adjacent = False
                     
