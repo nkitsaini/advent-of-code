@@ -41,7 +41,7 @@ def main():
         digit = ""
         adjacent = False
         for cidx, char in enumerate(line):
-            if !char.is_digit():
+            if not char.is_digit():
                 if digit != "" and not adjacent:
                     ans += int(digit)
 
