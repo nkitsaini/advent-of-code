@@ -28,8 +28,8 @@ def main():
 
 
     
-    # for idx, line in enumerate(lines):
-    #     loc_ans = 0
+    for idx, line in enumerate(lines):
+        loc_ans = 0
         
         
                 
