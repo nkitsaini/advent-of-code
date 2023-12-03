@@ -38,8 +38,10 @@ def main():
     
     for idx, line in enumerate(lines):
 
+        is_digit = False
         for cidx, char in enumerate(line):
-            if char == ""
+            if char.isdigit():
+                is_digit = True
         
         loc_ans = 0
         
