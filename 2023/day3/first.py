@@ -12,6 +12,14 @@ def dbg(val: T) -> T:
     return val
 
 
+DIRECTIONS = [
+    (1, 0),
+    (-1, 0),
+    (0, 1),
+    (0, -1),
+]
+
+
 def main():
     # Raw Text
     content = sys.stdin.read()
