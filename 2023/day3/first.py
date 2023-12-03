@@ -53,6 +53,7 @@ def main():
                     for gear_i in set(gear_idx):
                         GEAR_VALUES[gear_i].append(int(digit))
                 digit = ""
+                gear_idx = []
                 adjacent = False
                     
             if char.isdigit():
@@ -70,6 +71,7 @@ def main():
             # ans += int(digit)
             for gear_i in set(gear_idx):
                 GEAR_VALUES[gear_i].append(int(digit))
+            gear_idx = []
 
 
         
