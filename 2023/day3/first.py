@@ -90,6 +90,8 @@ def main():
         print(k, val)
         if tuple(val) in sets:
             continue
+        sets.add(tuple(val))
+
         ans += val[0] * val[1]
     
 
