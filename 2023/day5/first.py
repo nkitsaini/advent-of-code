@@ -62,6 +62,7 @@ def map_range(start, rng, ranges):
     if last != end:
         rv.append((last, end))
         print("4", f"{rv=}")
+    print("final", f"{rv=}")
     print("mapped range")
     return rv
 
