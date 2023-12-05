@@ -118,8 +118,8 @@ def main():
             #         # print("Found value")
             #         found = True
             #         break
-            if not found:
-                next_values.append(value)
+            # if not found:
+            #     next_values.append(value)
         values = next_values
         past = p
     print(values)
