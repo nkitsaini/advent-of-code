@@ -76,20 +76,21 @@ def main():
                     break
             if not found:
                 next_values.append(value)
+    print(min(values))
                 
-        ...
+    #     ...
 
    
-    for idx, line in enumerate(lines):
-        loc_ans = 0
-        loc_array = []
-        # Solvekkjkj
+    # for idx, line in enumerate(lines):
+    #     loc_ans = 0
+    #     loc_array = []
+    #     # Solvekkjkj
 
     
 
 
-    print(array)
-    print(ans)
+    # print(array)
+    # print(ans)
                  
 
 
