@@ -63,7 +63,6 @@ def main():
 
 
     path = ["seed", 'soil', 'fertilizer', 'water', 'light', 'temperature', 'humidity', 'location']
-        print(mappings)
 
    
     for idx, line in enumerate(lines):
