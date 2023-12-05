@@ -65,6 +65,11 @@ def main():
 
     print(mappings)
     values = seeds
+    value_ranges = []
+    for value, rng in zip(seeds, seeds[1::2]):
+
+
+    
     past = "seed"
     for p in path[1:]:
         print(values)
