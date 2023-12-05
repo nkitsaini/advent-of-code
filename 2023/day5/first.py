@@ -30,12 +30,12 @@ DIRECTIONS_EDGE = [
 ]
 
 # Return ranges
-def map_range(start, rng, ranges):
+def map_range(start, end, ranges):
     print("mapping range")
     rv = []
     ranges.sort(key=lambda x: (x[1], x[2]))
     last = start
-    end = start + rng
+    # end = start + rng
     for (dest, src, count) in ranges:
         if src + count <= last:
             continue
