@@ -52,6 +52,9 @@ def main():
             continue
 
         source, target = sp_lines[0].split()[0].split("-to-")
+        print("=source, target", source, target)
+        for range_query in sp_lines[1:]:
+            dest_start, dest_end, count = range_query.split()
    
     for idx, line in enumerate(lines):
         loc_ans = 0
