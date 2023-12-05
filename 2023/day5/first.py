@@ -45,6 +45,11 @@ def main():
 
     seeds = [int(x) for x in splits[0].split(':')[1].strip().split()]
     print(seeds)
+
+    for split in splits[1:]:
+        sp_lines = split.strip().splitlines()
+        if len(sp_lines) == 0:
+            continue
    
     for idx, line in enumerate(lines):
         loc_ans = 0
