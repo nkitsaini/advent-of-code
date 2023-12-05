@@ -63,7 +63,7 @@ def main():
     path = ["seed", 'soil', 'fertilizer', 'water', 'light', 'temperature', 'humidity', 'location']
 
     values = seeds
-    for p in path:
+    for p in path[1:]:
         ...
 
    
