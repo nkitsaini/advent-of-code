@@ -45,7 +45,7 @@ def map_range(start, rng, ranges):
             continue
         if end > src + count:
             print("2")
-            rv.append((src, src+count))
+            rv.append((dest, dest+count))
             last = last+count
             continue
         print("3")
