@@ -104,8 +104,8 @@ def main():
             mappings[target][source].append((int(dest_start), int(src_start), int(count)))
 
 
-    # path = ["seed", 'soil', 'fertilizer', 'water', 'light', 'temperature', 'humidity', 'location']
-    path = ["seed", 'soil']
+    path = ["seed", 'soil', 'fertilizer', 'water', 'light', 'temperature', 'humidity', 'location']
+    # path = ["seed", 'soil']
 
     print(mappings)
     values = seeds
