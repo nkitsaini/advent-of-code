@@ -57,7 +57,8 @@ def main():
         print("=source, target", source, target)
         for range_query in sp_lines[1:]:
             dest_start, src_start, count = range_query.split()
-            mappings[source][target].append((dest_start, src_start, count))
+            # mappings[source][target].append((dest_start, src_start, count))
+            mappings[target][source].append((dest_start, src_start, count))
 
 
     path = ["seed", 'soil', 'fertilizer', 'water', 'light', 'temperature', 'humidity', 'location']
