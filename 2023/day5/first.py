@@ -87,6 +87,7 @@ def main():
                 next_values.append(value)
         values = next_values
         past = p
+    print(values)
     print(min(values))
                 
     #     ...
