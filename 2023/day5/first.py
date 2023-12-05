@@ -82,7 +82,7 @@ def main():
             found = False
             for dest, src, count in maps:
                 dest, src, count = int(dest), int(src), int(count)
-                print(value, dest, src, count)
+                # print(value, dest, src, count)
                 if src + count > value and src <= value:
                     # value = 13, src = 10, dest = 90, count = 7
                     next_values.append(dest + value - src)
