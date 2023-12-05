@@ -39,6 +39,8 @@ def map_range(start, rng, ranges):
     for (dest, src, count) in ranges:
         if src + count <= last:
             continue
+        if src >= end:
+            continue
         print(dest, src, count, last, end)
         if last < src:
             if end <= src:
