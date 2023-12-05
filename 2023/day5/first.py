@@ -65,9 +65,9 @@ def map_range(start, end, ranges):
         # print("3")
         # rv.append((src, src + end-last))
         # last = end
-    if last != end:
-        rv.append((last, end))
-        print("4", f"{rv=}")
+    # if last != end:
+    #     rv.append((last, end))
+    #     print("4", f"{rv=}")
     print("final", f"{rv=}")
     print("mapped range")
     return rv
