@@ -80,6 +80,9 @@ def main():
                 rv.append((last, src-last))
                 last = src
                 continue
+            if end > src + count:
+                rv.append(src, src+count)
+                
 
 
         
