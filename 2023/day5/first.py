@@ -119,6 +119,7 @@ def main():
         # maps = mappings[past][p]
         maps = mappings[p][past]
         # print(maps, past, p)
+        print("=== values", values, p)
         next_values = []
         print("values", len(values), len(maps))
         # for value in values:
