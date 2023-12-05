@@ -72,7 +72,7 @@ def main():
     # Return ranges
     def map_range(start, rng, ranges):
         rv = []
-        print(start, rng)
+        
 
 
 
