@@ -62,6 +62,7 @@ def main():
 
     path = ["seed", 'soil', 'fertilizer', 'water', 'light', 'temperature', 'humidity', 'location']
 
+    print(mappings)
     values = seeds
     past = "path"
     for p in path[1:]:
