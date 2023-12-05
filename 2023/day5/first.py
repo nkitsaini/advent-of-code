@@ -48,8 +48,8 @@ def map_range(start, rng, ranges):
                 rv.append((last, end))
                 continue
             else:
-                print("1")
                 rv.append((last, src))
+                print("1.2", f"{rv=}")
                 last = src
         if end > src + count:
             print("2")
