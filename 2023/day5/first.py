@@ -39,13 +39,16 @@ def map_range(start, rng, ranges):
     for (dest, src, count) in ranges:
         print(dest, src, count, last, end)
         if last < src:
+            print("1")
             rv.append((last, src-last))
             last = src
             continue
         if end > src + count:
+            print("2")
             rv.append((src, src+count))
             last = last+count
             continue
+        print("3")
         rv.append((src, src + end-last))
         last = end
     print("mapped range")
