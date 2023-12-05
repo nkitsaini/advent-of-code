@@ -60,6 +60,7 @@ def main():
             for i in range(int(count)):
                 # source of `value` maps to destination of `key`
                 mappings[source][target][int(dest_start)+i] = int(src_start) + i
+        print(mappings)
 
    
     for idx, line in enumerate(lines):
