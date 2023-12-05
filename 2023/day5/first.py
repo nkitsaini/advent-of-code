@@ -18,6 +18,7 @@ DIRECTION_NAME = {
     "up": (-1, 0),
     "down": (1, 0),
 }
+DIRECTION_NAME_REVERSED = {v: k for k, v in DIRECTION_NAME.items()}
 
 DIRECTIONS = [
     (1, 0),
