@@ -29,6 +29,26 @@ DIRECTIONS_EDGE = [
     (1, 1),
 ]
 
+# Return ranges
+def map_range(start, rng, ranges):
+    print("mapping range")
+    rv = []
+    ranges.sort(key=lambda x: (x[1], x[2]))
+    last = start
+    end = start + rng
+    for (dest, src, count) in ranges:
+        if last < src:
+            rv.append((last, src-last))
+            last = src
+            continue
+        if end > src + count:
+            rv.append((src, src+count))
+            last = last+count
+            continue
+        rv.append((src, src + end-last))
+        last = end
+    print("mapped range")
+    return rv
 
 def main():
     # Raw Text
@@ -70,26 +90,6 @@ def main():
         value_ranges.append((value, rng))
     values = value_ranges
 
-    # Return ranges
-    def map_range(start, rng, ranges):
-        print("mapping range")
-        rv = []
-        ranges.sort(key=lambda x: (x[1], x[2]))
-        last = start
-        end = start + rng
-        for (dest, src, count) in ranges:
-            if last < src:
-                rv.append((last, src-last))
-                last = src
-                continue
-            if end > src + count:
-                rv.append((src, src+count))
-                last = last+count
-                continue
-            rv.append((src, src + end-last))
-            last = end
-        print("mapped range")
-        return rv
 
                 
 
