@@ -82,6 +82,7 @@ def main():
                 continue
             if end > src + count:
                 rv.append((src, src+count))
+                last = last+count
                 
 
 
