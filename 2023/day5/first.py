@@ -74,8 +74,8 @@ def main():
         rv = []
         
 
-    def min_range(ranges):
-        return min([r[0] for r in ranges])
+    # def min_range(ranges):
+    #     return min([r[0] for r in ranges])
 
 
 
