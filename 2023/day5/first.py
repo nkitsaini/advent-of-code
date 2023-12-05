@@ -29,11 +29,6 @@ DIRECTIONS_EDGE = [
     (1, 1),
 ]
 
-print(DIRECTION_NAME)
-print( DIRECTION_NAME_REVERSED)
-print( DIRECTIONS)
-print( DIRECTIONS_EDGE)
-
 
 def main():
     # Raw Text
