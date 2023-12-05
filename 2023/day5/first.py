@@ -46,24 +46,25 @@ def map_range(start, end, ranges):
         if ending_point <= starting_point:
             continue
         last += (ending_point - start)
-        print(f"{dest=}, {src=}, {count=}, {last=}, {end=}, {rv=}")
-        if last < src:
-            if end <= src:
-                print("1")
-                rv.append((last, end))
-                continue
-            else:
-                rv.append((last, src))
-                print("1.2", f"{rv=}")
-                last = src
-        if end > src + count:
-            print("2")
-            rv.append((dest, dest+count))
-            last = last+count
-            continue
-        print("3")
-        rv.append((src, src + end-last))
-        last = end
+        rv.append(starting_point, ending_point)
+        # print(f"{dest=}, {src=}, {count=}, {last=}, {end=}, {rv=}")
+        # if last < src:
+        #     if end <= src:
+        #         print("1")
+        #         rv.append((last, end))
+        #         continue
+        #     else:
+        #         rv.append((last, src))
+        #         print("1.2", f"{rv=}")
+        #         last = src
+        # if end > src + count:
+        #     print("2")
+        #     rv.append((dest, dest+count))
+        #     last = last+count
+        #     continue
+        # print("3")
+        # rv.append((src, src + end-last))
+        # last = end
     if last != end:
         rv.append((last, end))
         print("4", f"{rv=}")
