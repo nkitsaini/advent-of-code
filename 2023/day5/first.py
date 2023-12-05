@@ -156,5 +156,5 @@ def main():
     
 
 if __name__ == "__main__":
-    print(map_range(100, 50, [(11, 100, 3)]))
-    # main()
+    # print(map_range(100, 50, [(11, 100, 3)]))
+    main()
