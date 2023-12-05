@@ -20,12 +20,7 @@ DIRECTION_NAME = {
 }
 DIRECTION_NAME_REVERSED = {v: k for k, v in DIRECTION_NAME.items()}
 
-DIRECTIONS = [
-    (1, 0),
-    (-1, 0),
-    (0, 1),
-    (0, -1),
-]
+DIRECTIONS = list(DIRECTION_NAME_REVERSED.keys())
 DIRECTIONS_EDGE = [
     (1, 0),
     (-1, 0),
