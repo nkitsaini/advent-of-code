@@ -73,6 +73,15 @@ def main():
     def map_range(start, rng, ranges):
         rv = []
         ranges.sort()
+        last = start
+        end = start + rng
+        for (dest, src, count) in ranges:
+            if last < src:
+                rv.append((last, src-last))
+                last = src
+                continue
+
+
         
 
     def min_range(ranges):
