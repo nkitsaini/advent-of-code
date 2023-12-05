@@ -93,7 +93,7 @@ def main():
     values = seeds
     value_ranges = []
     for value, rng in zip(seeds[::2], seeds[1::2]):
-        value_ranges.append((value, rng))
+        value_ranges.append((value, value+rng))
     values = value_ranges
 
 
