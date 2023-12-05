@@ -43,7 +43,7 @@ def map_range(start, end, ranges):
         #     continue
         starting_point = max(src, last)
         ending_point = min(src + count, end)
-        if ending_point <= starting_point:
+        if ending_point <= starting_point or starting_point <= last or ending_point >= end:
             continue
         last += (ending_point - start)
         rv.append((starting_point, ending_point))
