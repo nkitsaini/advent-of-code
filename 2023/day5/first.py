@@ -46,6 +46,8 @@ def main():
     seeds = [int(x) for x in splits[0].split(':')[1].strip().split()]
     print(seeds)
 
+    mappings = []
+
     for split in splits[1:]:
         sp_lines = split.strip().splitlines()
         if len(sp_lines) == 0:
@@ -55,6 +57,7 @@ def main():
         print("=source, target", source, target)
         for range_query in sp_lines[1:]:
             dest_start, dest_end, count = range_query.split()
+
    
     for idx, line in enumerate(lines):
         loc_ans = 0
