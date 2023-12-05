@@ -67,11 +67,11 @@ def main():
     values = seeds
     past = "seed"
     for p in path[1:]:
+        print(values)
         # maps = mappings[past][p]
         maps = mappings[p][past]
         # print(maps, past, p)
         next_values = []
-        print(next_values)
         for value in values:
             found = False
             for dest, src, count in maps:
@@ -85,6 +85,7 @@ def main():
                     break
             if not found:
                 next_values.append(value)
+        values = next_values
         past = p
     print(min(values))
                 
