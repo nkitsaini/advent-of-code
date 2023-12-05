@@ -50,6 +50,8 @@ def main():
         sp_lines = split.strip().splitlines()
         if len(sp_lines) == 0:
             continue
+
+        source, target = sp_lines[0].split()[0].split("-to-")
    
     for idx, line in enumerate(lines):
         loc_ans = 0
