@@ -72,6 +72,7 @@ def main():
         for value in values:
             found = False
             for dest, src, count in maps:
+                dest, src, count = int(dest), int(src), int(count)
                 print(value, dest, src, count)
                 if src + count > value:
                     # value = 13, src = 10, dest = 90, count = 7
