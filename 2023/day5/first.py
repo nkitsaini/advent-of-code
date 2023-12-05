@@ -109,10 +109,10 @@ def main():
         # print(maps, past, p)
         next_values = []
         # print("values", len(values), len())
-        for value in values:
-            found = False
-            for start, rng in values:
-                next_values.extend(map_range(start, rng, maps))
+        # for value in values:
+        #     found = False
+        for start, rng in values:
+            next_values.extend(map_range(start, rng, maps))
             # for dest, src, count in maps:
             #     dest, src, count = int(dest), int(src), int(count)
             #     # print(value, dest, src, count)
