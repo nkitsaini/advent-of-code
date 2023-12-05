@@ -29,6 +29,8 @@ DIRECTIONS_EDGE = [
     (1, 1),
 ]
 
+print(DIRECTION_NAME, DIRECTION_NAME_REVERSED, DIRECTIONS, DIRECTIONS_EDGE)
+
 
 def main():
     # Raw Text
