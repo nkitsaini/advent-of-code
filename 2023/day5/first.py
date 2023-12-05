@@ -56,7 +56,9 @@ def main():
         source, target = sp_lines[0].split()[0].split("-to-")
         print("=source, target", source, target)
         for range_query in sp_lines[1:]:
-            dest_start, dest_end, count = range_query.split()
+            dest_start, src_start, count = range_query.split()
+            for i in range(int(count)):
+                mappings[source][target][int(dest_start)+i] = int(dest_end) + i
 
    
     for idx, line in enumerate(lines):
