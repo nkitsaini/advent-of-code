@@ -37,12 +37,14 @@ def map_range(start, end, ranges):
     last = start
     # end = start + rng
     for (dest, src, count) in ranges:
-        if src + count <= last:
-            continue
-        if src >= end:
-            continue
+        # if src + count <= last:
+        #     continue
+        # if src >= end:
+        #     continue
         starting_point = max(src, last)
         ending_point = min(src + count, end)
+        if ending_point <= starting_point:
+            continue
         print(f"{dest=}, {src=}, {count=}, {last=}, {end=}, {rv=}")
         if last < src:
             if end <= src:
