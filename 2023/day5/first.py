@@ -68,7 +68,7 @@ def main():
     past = "path"
     for p in path[1:]:
         maps = mappings[past][p]
-        print(maps)
+        print(maps, past, p)
         next_values = []
         for value in values:
             found = False
