@@ -43,7 +43,8 @@ def main():
     ans = 0
     array = []
 
-    seeds = splits[0].split(':')
+    seeds = [int(x) for x in splits[0].split(':')[1].strip().split()]
+    print(seeds)
    
     for idx, line in enumerate(lines):
         loc_ans = 0
