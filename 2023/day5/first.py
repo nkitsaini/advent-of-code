@@ -58,6 +58,7 @@ def main():
         for range_query in sp_lines[1:]:
             dest_start, src_start, count = range_query.split()
             for i in range(int(count)):
+                # source of `value` maps to destination of `key`
                 mappings[source][target][int(dest_start)+i] = int(dest_end) + i
 
    
