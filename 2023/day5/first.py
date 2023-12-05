@@ -76,7 +76,7 @@ def map_range(start, end, ranges):
         print("4", f"{rv=}")
     print("final", f"{rv=}")
     print("mapped range")
-    return rv
+    return [x for x in rv if x[0] != x[1]]
 
 def main():
     # Raw Text
