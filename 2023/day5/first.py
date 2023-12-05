@@ -74,8 +74,8 @@ def main():
                     next_values.append(dest + src - value)
                     found = True
                     break
-            if found:
-                break
+            if not found:
+                next_values.append(value)
                 
         ...
 
