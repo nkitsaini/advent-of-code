@@ -66,6 +66,11 @@ def main():
     past = "path"
     for p in path[1:]:
         maps = mappings[past][p]
+        next_values = []
+        for value in values:
+            for dest, src, count in maps:
+                if src + count > value:
+                    next_values.append(dest + src - value)
         ...
 
    
