@@ -41,7 +41,7 @@ def map_range(start, rng, ranges):
             continue
         if src >= end:
             continue
-        print(dest, src, count, last, end)
+        print(f"{dest=}, {src=}, {count=}, {last=}, {end=}")
         if last < src:
             if end <= src:
                 print("1")
