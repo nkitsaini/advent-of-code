@@ -124,6 +124,7 @@ def main():
         past = p
     print(values)
     print(min(values))
+    print(min_range(values))
                 
     #     ...
 
