@@ -67,8 +67,8 @@ def main():
     for p in path[1:]:
         maps = mappings[past][p]
         next_values = []
-        found = False
         for value in values:
+            found = False
             for dest, src, count in maps:
                 if src + count > value:
                     next_values.append(dest + src - value)
