@@ -37,6 +37,7 @@ def map_range(start, rng, ranges):
     last = start
     end = start + rng
     for (dest, src, count) in ranges:
+        print(dest, src, count, last, end)
         if last < src:
             rv.append((last, src-last))
             last = src
