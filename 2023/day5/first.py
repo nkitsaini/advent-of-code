@@ -46,7 +46,7 @@ def main():
     seeds = [int(x) for x in splits[0].split(':')[1].strip().split()]
     print(seeds)
 
-    mappings = defaultdict(lambda: defaultdict(dict))
+    mappings = defaultdict(lambda: defaultdict(list))
 
     for split in splits[1:]:
         sp_lines = split.strip().splitlines()
@@ -59,7 +59,7 @@ def main():
             dest_start, src_start, count = range_query.split()
             for i in range(int(count)):
                 # source of `value` maps to destination of `key`
-                mappings[source][target][int(dest_start)+i] = int(src_start) + i
+                mappings[source][target].append((dest_start, src_start, count))
 
 
     path = ["seed", 'soil', 'fertilizer', 'water', 'light', 'temperature', 'humidity', 'location']
