@@ -86,6 +86,7 @@ def main():
                 continue
             rv.append((src, src + end-last))
             last = end
+        return rv
 
                 
 
