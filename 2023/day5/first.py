@@ -108,6 +108,7 @@ def main():
         maps = mappings[p][past]
         # print(maps, past, p)
         next_values = []
+        print("values", len(values))
         for value in values:
             found = False
             for start, rng in values:
