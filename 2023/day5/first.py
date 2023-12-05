@@ -108,7 +108,7 @@ def main():
         for value in values:
             found = False
             for start, rng in values:
-                next_values.extend(map_range(values, maps))
+                next_values.extend(map_range(start, rng, maps))
             # for dest, src, count in maps:
             #     dest, src, count = int(dest), int(src), int(count)
             #     # print(value, dest, src, count)
