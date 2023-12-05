@@ -68,6 +68,7 @@ def main():
     value_ranges = []
     for value, rng in zip(seeds[::2], seeds[1::2]):
         value_ranges.append((value, rng))
+    values = value_ranges
 
     # Return ranges
     def map_range(start, rng, ranges):
