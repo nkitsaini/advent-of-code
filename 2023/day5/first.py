@@ -71,9 +71,10 @@ def main():
 
     # Return ranges
     def map_range(start, rng, ranges):
+        rv = []
 
 
-    
+
     past = "seed"
     for p in path[1:]:
         # print(values)
