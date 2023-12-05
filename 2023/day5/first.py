@@ -59,7 +59,7 @@ def main():
             dest_start, src_start, count = range_query.split()
             for i in range(int(count)):
                 # source of `value` maps to destination of `key`
-                mappings[source][target][int(dest_start)+i] = int(dest_end) + i
+                mappings[source][target][int(dest_start)+i] = int(src_start) + i
 
    
     for idx, line in enumerate(lines):
