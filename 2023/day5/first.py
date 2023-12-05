@@ -40,12 +40,13 @@ def map_range(start, rng, ranges):
         print(dest, src, count, last, end)
         if last < src:
             if end <= src:
+                print("1")
                 rv.append((last, end))
                 continue
-            print("1")
-            rv.append((last, src))
-            last = src
-            continue
+            else:
+                print("1")
+                rv.append((last, src))
+                last = src
         if end > src + count:
             print("2")
             rv.append((dest, dest+count))
