@@ -43,11 +43,12 @@ def main():
     ans = 0
     array = []
 
+    seeds = splits[0].split(':')
    
     for idx, line in enumerate(lines):
         loc_ans = 0
         loc_array = []
-        # Solve
+        # Solvekkjkj
 
     
 
