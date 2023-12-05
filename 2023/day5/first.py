@@ -43,6 +43,7 @@ def map_range(start, end, ranges):
         #     continue
         starting_point = max(src, last)
         ending_point = min(src + count, end)
+        print(f"{starting_point=}, {ending_point=}")
         if ending_point <= starting_point or starting_point <= last or ending_point >= end:
             continue
         last += (ending_point - start)
