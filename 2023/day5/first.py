@@ -46,7 +46,7 @@ def map_range(start, end, ranges):
         print(f"{starting_point=}, {ending_point=}")
         if ending_point <= starting_point or ending_point <= last or starting_point >= end:
             continue
-        last += (ending_point - start)
+        last += (ending_point - src)
         rv.append((starting_point + dest - src, ending_point + dest - src))
         # print(f"{dest=}, {src=}, {count=}, {last=}, {end=}, {rv=}")
         # if last < src:
