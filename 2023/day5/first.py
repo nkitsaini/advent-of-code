@@ -51,6 +51,8 @@ def map_range(start, rng, ranges):
         print("3")
         rv.append((src, src + end-last))
         last = end
+    if last != end:
+        rv.append((last, end-last))
     print("mapped range")
     return rv
 
