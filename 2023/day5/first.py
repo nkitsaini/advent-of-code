@@ -72,6 +72,7 @@ def main():
 
     # Return ranges
     def map_range(start, rng, ranges):
+        print("mapping range")
         rv = []
         ranges.sort(key=lambda x: (x[1], x[2]))
         last = start
@@ -87,6 +88,7 @@ def main():
                 continue
             rv.append((src, src + end-last))
             last = end
+        print("mapped range")
         return rv
 
                 
