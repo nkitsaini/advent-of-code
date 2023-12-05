@@ -72,6 +72,7 @@ def main():
     # Return ranges
     def map_range(start, rng, ranges):
         rv = []
+        ranges.sort()
         
 
     def min_range(ranges):
