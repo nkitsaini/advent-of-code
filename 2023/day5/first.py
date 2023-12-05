@@ -60,6 +60,9 @@ def main():
             for i in range(int(count)):
                 # source of `value` maps to destination of `key`
                 mappings[source][target][int(dest_start)+i] = int(src_start) + i
+
+
+    path = ["seed", 'soil', 'fertilizer', 'water', 'light', 'temperature', 'humidity', 'location']
         print(mappings)
 
    
