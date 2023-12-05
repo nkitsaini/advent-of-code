@@ -65,6 +65,7 @@ def main():
     values = seeds
     past = "path"
     for p in path[1:]:
+        maps = mappings[past][p]
         ...
 
    
