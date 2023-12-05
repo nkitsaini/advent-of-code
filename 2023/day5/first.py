@@ -46,7 +46,7 @@ def main():
     seeds = [int(x) for x in splits[0].split(':')[1].strip().split()]
     print(seeds)
 
-    mappings = defaultdict()
+    mappings = defaultdict(defaultdict())
 
     for split in splits[1:]:
         sp_lines = split.strip().splitlines()
