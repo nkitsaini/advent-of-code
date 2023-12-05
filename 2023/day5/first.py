@@ -65,7 +65,7 @@ def main():
 
     print(mappings)
     values = seeds
-    past = "path"
+    past = "seed"
     for p in path[1:]:
         maps = mappings[past][p]
         print(maps, past, p)
@@ -83,6 +83,7 @@ def main():
                     break
             if not found:
                 next_values.append(value)
+        past = p
     print(min(values))
                 
     #     ...
