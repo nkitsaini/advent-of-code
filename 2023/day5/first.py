@@ -136,7 +136,7 @@ def main():
             #         break
             # if not found:
             #     next_values.append(value)
-        values = next_values.copy()
+        values = list(set(next_values))
         past = p
     print(values)
     print(min(values))
