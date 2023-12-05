@@ -71,6 +71,7 @@ def main():
             found = False
             for dest, src, count in maps:
                 if src + count > value:
+                    # value = 13, src = 10, dest = 90, count = 7
                     next_values.append(dest + src - value)
                     found = True
                     break
