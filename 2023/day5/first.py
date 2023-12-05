@@ -69,8 +69,9 @@ def main():
     for p in path[1:]:
         # maps = mappings[past][p]
         maps = mappings[p][past]
-        print(maps, past, p)
+        # print(maps, past, p)
         next_values = []
+        print(next_values)
         for value in values:
             found = False
             for dest, src, count in maps:
