@@ -47,6 +47,7 @@ def main():
     array = []
 
     times = [int(x) for x in trim_split(trim_split(lines[0], ":")[1])]
+    distance = [int(x) for x in trim_split(trim_split(lines[1], ":")[1])]
     for idx, line in enumerate(lines):
         loc_ans = 0
         loc_array = []
