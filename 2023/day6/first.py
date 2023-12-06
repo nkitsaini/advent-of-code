@@ -54,6 +54,7 @@ def main():
     print(distance)
     # times = [sum(times)]
     # distance = [sum(distance)]
+    return
 
     for t, d in zip(times, distance):
         loc_ans = 0
@@ -67,6 +68,7 @@ def main():
         # (t -acc)*acc > d
         # -acc**2 + t*acc  > d
         # -acc**2 + t*acc > d
+
         print("ans", loc_ans)
         ans *= loc_ans
         
