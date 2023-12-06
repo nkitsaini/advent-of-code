@@ -51,6 +51,9 @@ def main():
     print(times)
     print(distance)
 
+    for t, d in zip(times, distance):
+        ...
+
 
 
     print(array)
