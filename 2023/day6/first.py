@@ -46,7 +46,7 @@ def main():
     ans = 1
     array = []
 
-    times = [int(x) for x in trim_split(trim_split(lines[0], ":")[1])]
+    times = [int("".join(trim_split(trim_split(lines[0], ":")[1])))]
     distance = [int(x) for x in trim_split(trim_split(lines[1], ":")[1])]
     # times
     print(times)
