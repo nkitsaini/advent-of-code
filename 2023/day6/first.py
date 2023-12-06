@@ -43,7 +43,8 @@ def main():
     array = []
 
     for idx, line in enumerate(lines):
-        ...
+        loc_ans = 0
+        loc_array = []
 
 
     print(array)
