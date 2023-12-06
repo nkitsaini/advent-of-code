@@ -43,7 +43,7 @@ def main():
     # each block (splitted by empty line)
     splits = content.split('\n\n')
 
-    ans = 0
+    ans = 1
     array = []
 
     times = [int(x) for x in trim_split(trim_split(lines[0], ":")[1])]
@@ -52,6 +52,12 @@ def main():
     print(distance)
 
     for t, d in zip(times, distance):
+        loc_ans = 0
+        for acc in range(0, t+1):
+            total_d = (t - acc)*acc
+            if total_d >= d:
+                loc_ans += 1
+        ans *= loc_ans
         
         ...
 
