@@ -31,8 +31,7 @@ DIRECTIONS_EDGE = [
 
 def trim_split(value: str, sep: str = " ") -> List[str]:
     rv = []
-    value.strip().split(sep)
-    ...
+    return [x.strip() for x in value.strip().split(sep)]
 
 def main():
     # Raw Text
