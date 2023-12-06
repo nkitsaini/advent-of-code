@@ -57,6 +57,7 @@ def main():
             total_d = (t - acc)*acc
             if total_d >= d:
                 loc_ans += 1
+        print(loc_ans)
         ans *= loc_ans
         
         ...
