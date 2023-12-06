@@ -29,6 +29,11 @@ DIRECTIONS_EDGE = [
     (1, 1),
 ]
 
+def trim_split(value: str, sep: str = " ") -> List[str]:
+    rv = []
+    value.strip().split(sep)
+    ...
+
 def main():
     # Raw Text
     content = sys.stdin.read()
@@ -45,6 +50,7 @@ def main():
     for idx, line in enumerate(lines):
         loc_ans = 0
         loc_array = []
+
 
 
     print(array)
