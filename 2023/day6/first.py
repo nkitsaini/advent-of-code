@@ -63,6 +63,7 @@ def main():
             if total_d > d:
                 print(acc)
                 loc_ans += 1
+        # (t -acc)*acc > d
         print("ans", loc_ans)
         ans *= loc_ans
         
