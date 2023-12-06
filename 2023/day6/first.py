@@ -47,12 +47,13 @@ def main():
     array = []
 
     times = [int("".join(trim_split(trim_split(lines[0], ":")[1])))]
-    distance = [int(x) for x in trim_split(trim_split(lines[1], ":")[1])]
+    distance = [int("".join(trim_split(trim_split(lines[1], ":")[1])))]
+    # distance = [int(x) for x in trim_split(trim_split(lines[1], ":")[1])]
     # times
     print(times)
     print(distance)
-    times = [sum(times)]
-    distance = [sum(distance)]
+    # times = [sum(times)]
+    # distance = [sum(distance)]
 
     for t, d in zip(times, distance):
         loc_ans = 0
