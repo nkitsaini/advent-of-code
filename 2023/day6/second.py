@@ -51,6 +51,8 @@ def main():
     # times
     print(times)
     print(distance)
+    times = [sum(times)]
+    distance = [sum(distance)]
 
     for t, d in zip(times, distance):
         loc_ans = 0
