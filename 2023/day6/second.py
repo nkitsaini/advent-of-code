@@ -65,7 +65,8 @@ def main():
                 loc_ans += 1
         # (t -acc)*acc > d
         # (t -acc)*acc > d
-        # -acc**2 + t*acc +  > d
+        # -acc**2 + t*acc  > d
+        # -acc**2 + t*acc > d
         print("ans", loc_ans)
         ans *= loc_ans
         
