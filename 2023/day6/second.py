@@ -55,7 +55,7 @@ def main():
         loc_ans = 0
         for acc in range(0, t+1):
             total_d = (t - acc)*acc
-            pritn(t, acc, total_d)
+            print(t, acc, total_d)
             if total_d >= d:
                 print(acc)
                 loc_ans += 1
