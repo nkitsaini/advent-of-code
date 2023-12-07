@@ -115,6 +115,7 @@ def main():
     cards = []
     for idx, line in enumerate(lines):
         card, amount = line.split()
+        print("============ card", card)
         cards.append((get_hand_score_complex(card), card, int(amount)))
     cards.sort(reverse=True)
     print(cards)
