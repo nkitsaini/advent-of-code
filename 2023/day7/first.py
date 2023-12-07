@@ -59,8 +59,8 @@ def get_hand_score(card: str):
 def get_hand_score_complex(card: str, min_idx=0):
     max_score = ''
     max_card = ''
-    # if 'J' not in card:
-    #     return get_hand_score(card)
+    if 'J' not in card:
+        return get_hand_score(card)
     for idx in range(len(card)):
         if min_idx > idx:
             continue
@@ -68,6 +68,7 @@ def get_hand_score_complex(card: str, min_idx=0):
             for pcard in CARD_ORDERS:
                 new_card = card[:idx] + pcard + card[idx+1:]
                 score = get_hand_score_complex(new_card, idx + 1)
+                print(score)
                 if score > max_score:
                     max_score = score
     return max_score
