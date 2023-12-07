@@ -33,6 +33,9 @@ DIRECTIONS_EDGE = [
 
 CARD_ORDERS = ['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2']
 
+def get_card_score(card: str):
+    return CARD_ORDERS.index(card)
+
 def trim_split(value: str, sep: str = " ", remove_empty: bool = True) -> List[str]:
     rv = []
     return [x.strip() for x in value.strip().split(sep) if x.strip() != ""]
