@@ -107,7 +107,7 @@ def main():
     cards = []
     for idx, line in enumerate(lines):
         card, amount = line.split()
-        cards.append((get_hand_score(card), card, int(amount)))
+        cards.append((get_hand_score_complex(card), card, int(amount)))
     cards.sort(reverse=True)
     print(cards)
     for idx, (hand, card, amount) in enumerate(cards):
