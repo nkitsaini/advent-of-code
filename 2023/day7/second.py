@@ -39,6 +39,7 @@ def get_card_score(card: str):
 def get_hand_score(card: str):
     # ...........
     counts = Counter(card)
+    card_map = [get_card_score(x) for x in card]
     if sorted(counts.values()) == [5]:
         return '0' + card
     if sorted(counts.values()) == [1,4]:
