@@ -57,7 +57,7 @@ def get_hand_score(card: str, orig: str):
         return '6' + card_map
 
 def get_hand_score_complex(card: str, orig: str|None = None, min_idx=0):
-    max_score = ''
+    max_score = 'zzzzz'
     max_card = ''
     if orig is None:
         orig = card
@@ -71,8 +71,9 @@ def get_hand_score_complex(card: str, orig: str|None = None, min_idx=0):
                 new_card = card[:idx] + pcard + card[idx+1:]
                 score = get_hand_score_complex(new_card.upper(), orig, idx + 1)
                 print(score, new_card)
-                if score > max_score:
-                    max_score = score
+                max_score = min(score, max_score)
+                # if score > max_score:
+                #     max_score = score
     return max_score
 
     # if len(set(card)) == 1:
