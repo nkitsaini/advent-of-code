@@ -41,19 +41,19 @@ def get_hand_score(card: str):
     counts = Counter(card)
     card_map = ''.join([chr(ord('a') + get_card_score(x)) for x in card])
     if sorted(counts.values()) == [5]:
-        return '0' + card
+        return '0' + card_map
     if sorted(counts.values()) == [1,4]:
-        return '1' + card
+        return '1' + card_map
     if sorted(counts.values()) == [2, 3]:
-        return '2' + card
+        return '2' + card_map
     if sorted(counts.values()) == [1, 1, 3]:
-        return '3' + card
+        return '3' + card_map
     if sorted(counts.values()) == [1, 2, 2]:
-        return '4' + card
+        return '4' + card_map
     if sorted(counts.values()) == [1, 1, 1, 2]:
-        return '5' + card
+        return '5' + card_map
     if sorted(counts.values()) == [1, 1, 1, 1, 1]:
-        return '6' + card
+        return '6' + card_map
     # if len(set(card)) == 1:
     #     return '6' + card
     # if max(counts.values()) == 4:
