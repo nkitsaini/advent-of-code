@@ -39,20 +39,20 @@ def get_card_score(card: str):
 def get_hand_score(card: str):
     # ...........
     counts = Counter(card)
-    # if len(set(card)) == 1:
-    #     return '0' + card
-    # if max(counts.values()) == 4:
-    #     return '1' + card
-    # if sorted(counts.values()) == [2, 3]:
-    #     return '2' + card
-    # if sorted(counts.values()) == [1, 1, 3]:
-    #     return '3' + card
-    # if sorted(counts.values()) == [1, 2, 2]:
-    #     return '4' + card
-    # if sorted(counts.values()) == [1, 1, 1, 2]:
-    #     return '5' + card
-    # if sorted(counts.values()) == [1, 1, 1, 1, 1]:
-    #     return '6' + card
+    if len(set(card)) == 1:
+        return '0' + card
+    if max(counts.values()) == 4:
+        return '1' + card
+    if sorted(counts.values()) == [2, 3]:
+        return '2' + card
+    if sorted(counts.values()) == [1, 1, 3]:
+        return '3' + card
+    if sorted(counts.values()) == [1, 2, 2]:
+        return '4' + card
+    if sorted(counts.values()) == [1, 1, 1, 2]:
+        return '5' + card
+    if sorted(counts.values()) == [1, 1, 1, 1, 1]:
+        return '6' + card
     # if len(set(card)) == 1:
     #     return '6' + card
     # if max(counts.values()) == 4:
