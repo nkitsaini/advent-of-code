@@ -40,7 +40,7 @@ def get_card_score(card: str):
 def get_hand_score(card: str, orig: str):
     # ...........
     counts = Counter(card)
-    card_map = ''.join([chr(ord('a') + get_card_score(x)) for x in card])
+    card_map = ''.join([chr(ord('a') + get_card_score(x)) for x in orig])
     if sorted(counts.values()) == [5]:
         return '0' + card_map
     if sorted(counts.values()) == [1,4]:
