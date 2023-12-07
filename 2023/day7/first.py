@@ -37,7 +37,7 @@ CARD_ORDERS = ['A', 'K', 'Q', 'T', '9', '8', '7', '6', '5', '4', '3', '2', 'J']
 def get_card_score(card: str):
     return CARD_ORDERS.index(card)
 
-def get_hand_score(card: str):
+def get_hand_score(card: str, orig: str):
     # ...........
     counts = Counter(card)
     card_map = ''.join([chr(ord('a') + get_card_score(x)) for x in card])
