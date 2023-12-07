@@ -56,7 +56,7 @@ def get_hand_score(card: str, orig: str):
     if sorted(counts.values()) == [1, 1, 1, 1, 1]:
         return '6' + card_map
 
-def get_hand_score_complex(card: str, min_idx=0):
+def get_hand_score_complex(card: str, orig: str|None = None, min_idx=0):
     max_score = ''
     max_card = ''
     if 'J' not in card:
