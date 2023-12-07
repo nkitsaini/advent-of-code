@@ -76,6 +76,8 @@ def main():
     ans = 0
     array = []
 
+    cards = []
+    scores = []
     for idx, line in enumerate(lines):
         ...
 
