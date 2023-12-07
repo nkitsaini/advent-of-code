@@ -55,6 +55,11 @@ def get_hand_score(card: str):
         return '5' + card_map
     if sorted(counts.values()) == [1, 1, 1, 1, 1]:
         return '6' + card_map
+
+def get_hand_score_complex(card: str):
+    for idx in range(len(card)):
+        if card[idx] == 'J':
+            new_card = 
     # if len(set(card)) == 1:
     #     return '6' + card
     # if max(counts.values()) == 4:
