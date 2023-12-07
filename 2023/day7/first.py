@@ -43,7 +43,7 @@ def main():
     # each block (splitted by empty line)
     splits = content.split('\n\n')
 
-    ans = 1
+    ans = 0
     array = []
 
     for idx, line in enumerate(lines):
