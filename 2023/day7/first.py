@@ -59,6 +59,8 @@ def get_hand_score(card: str, orig: str):
 def get_hand_score_complex(card: str, orig: str|None = None, min_idx=0):
     max_score = ''
     max_card = ''
+    if orig is None:
+        orig = card
     if 'J' not in card:
         return get_hand_score(card)
     for idx in range(len(card)):
