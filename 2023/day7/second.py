@@ -68,6 +68,7 @@ def get_hand_score_complex(card: str):
                 score = get_hand_score(new_card)
                 if score > max_score:
                     max_score = score
+            break
     return max_score
 
     # if len(set(card)) == 1:
