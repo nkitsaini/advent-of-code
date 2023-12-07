@@ -41,7 +41,7 @@ def get_hand_score(card: str):
     counts = Counter(card)
     if len(set(card)) == 1:
         return '0' + card
-    if max(counts.values()) == 4:
+    if sorted(counts.values()) == [1,4]:
         return '1' + card
     if sorted(counts.values()) == [2, 3]:
         return '2' + card
