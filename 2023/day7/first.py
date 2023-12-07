@@ -64,7 +64,7 @@ def get_hand_score_complex(card: str, min_idx=0):
     for idx in range(len(card)):
         if min_idx > idx:
             continue
-        if card[idx] == 'J':
+        if card[idx].upper() == 'J':
             for pcard in CARD_ORDERS:
                 new_card = card[:idx] + pcard + card[idx+1:]
                 score = get_hand_score_complex(new_card, idx + 1)
