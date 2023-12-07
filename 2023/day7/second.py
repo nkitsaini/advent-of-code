@@ -31,7 +31,8 @@ DIRECTIONS_EDGE = [
     (1, 1),
 ]
 
-CARD_ORDERS = ['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2']
+# CARD_ORDERS = ['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2']
+CARD_ORDERS = ['A', 'K', 'Q', 'T', '9', '8', '7', '6', '5', '4', '3', '2', 'J']
 
 def get_card_score(card: str):
     return CARD_ORDERS.index(card)
