@@ -70,7 +70,7 @@ def get_hand_score_complex(card: str, orig: str|None = None, min_idx=0):
             for pcard in CARD_ORDERS:
                 new_card = card[:idx] + pcard + card[idx+1:]
                 score = get_hand_score_complex(new_card.upper(), orig, idx + 1)
-                print(score)
+                print(score, new_card)
                 if score > max_score:
                     max_score = score
     return max_score
