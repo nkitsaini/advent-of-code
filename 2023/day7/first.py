@@ -45,6 +45,14 @@ def get_hand_score(card: str):
         return '1' + card
     if sorted(counts.values()) == [2, 3]:
         return '2' + card
+    if sorted(counts.values()) == [1, 1, 3]:
+        return '3' + card
+    if sorted(counts.values()) == [1, 2, 2]:
+        return '4' + card
+    if sorted(counts.values()) == [1, 1, 1, 2]:
+        return '5' + card
+    if sorted(counts.values()) == [1, 1, 1, 1, 1]:
+        return '6' + card
 
 def trim_split(value: str, sep: str = " ", remove_empty: bool = True) -> List[str]:
     rv = []
