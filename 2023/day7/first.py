@@ -77,8 +77,9 @@ def main():
     array = []
 
     cards = []
-    scores = []
     for idx, line in enumerate(lines):
+        card, amount = line.split()
+        cards.append((card, int(amount)))
         ...
 
 
