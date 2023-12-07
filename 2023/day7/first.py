@@ -1,6 +1,7 @@
 import sys
 import re
 from pprint import pprint
+import sympy
 from collections import *
 import string
 from typing import *
