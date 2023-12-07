@@ -46,6 +46,8 @@ def main():
     ans = 1
     array = []
 
+    for idx, line in enumerate(lines):
+        ...
 
 
     print(array)
