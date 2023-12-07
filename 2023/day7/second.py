@@ -43,6 +43,8 @@ def get_hand_score(card: str):
         return '0' + card[0]
     if max(counts.values()) == 4:
         return '1' + [x for x in counts.keys() if counts[x] == 4][0]
+    if sorted(counts.values()) == [2, 3]:
+        return '2' + [x for x in counts.keys() if counts[x] == 4][0]
 
 def trim_split(value: str, sep: str = " ", remove_empty: bool = True) -> List[str]:
     rv = []
