@@ -93,10 +93,10 @@ def main():
     cards = []
     for idx, line in enumerate(lines):
         card, amount = line.split()
-        cards.append((card, int(amount)))
-    cards.sort(key=lambda x: get_hand_score(x[0]), reverse=True)
+        cards.append((get_hand_score(card), card, int(amount)))
+    cards.sort(reverse=True)
     print(cards)
-    for idx, (card, amount) in enumerate(cards):
+    for idx, (hand, card, amount) in enumerate(cards):
         ans += (idx +1) * amount
 
 
