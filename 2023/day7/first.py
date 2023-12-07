@@ -1,8 +1,8 @@
 import sys
 import re
 from pprint import pprint
-from sympy.solvers import solve
-from sympy import Symbol
+# from sympy.solvers import solve
+# from sympy import Symbol
 from collections import *
 import string
 from typing import *
@@ -35,9 +35,9 @@ def trim_split(value: str, sep: str = " ", remove_empty: bool = True) -> List[st
     rv = []
     return [x.strip() for x in value.strip().split(sep) if x.strip() != ""]
 
-def solve_quadratics(a, b, c) -> Tuple[float, float]:
-    x = Symbol('x')
-    return tuple(solve(a*x*x + b*x, +c, 0))
+# def solve_quadratics(a, b, c) -> Tuple[float, float]:
+#     x = Symbol('x')
+#     return tuple(solve(a*x*x + b*x, +c, 0))
 
 def main():
     # Raw Text
