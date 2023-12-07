@@ -31,51 +31,22 @@ DIRECTIONS_EDGE = [
 
 # Return ranges
 def map_range(start, end, ranges):
-    print("mapping range")
     rv = []
     ranges.sort(key=lambda x: (x[1], x[2]))
     last = start
-    # end = start + rng
     for (dest, src, count) in ranges:
-        # if src + count <= last:
-        #     continue
-        # if src >= end:
-        #     continue
         if src > last:
-            print("1")
             rv.append((last, min(end, src + count)))
             last = min(end, src + count)
 
         starting_point = max(src, last)
         ending_point = min(src + count, end)
-        print(f"{starting_point=}, {ending_point=}")
         if ending_point <= starting_point or ending_point <= last or starting_point >= end:
             continue
         last += (ending_point - starting_point)
         rv.append((starting_point + dest - src, ending_point + dest - src))
-        # print(f"{dest=}, {src=}, {count=}, {last=}, {end=}, {rv=}")
-        # if last < src:
-        #     if end <= src:
-        #         print("1")
-        #         rv.append((last, end))
-        #         continue
-        #     else:
-        #         rv.append((last, src))
-        #         print("1.2", f"{rv=}")
-        #         last = src
-        # if end > src + count:
-        #     print("2")
-        #     rv.append((dest, dest+count))
-        #     last = last+count
-        #     continue
-        # print("3")
-        # rv.append((src, src + end-last))
-        # last = end
     if last != end:
         rv.append((last, end))
-        print("4", f"{rv=}")
-    print("final", f"{rv=}")
-    print("mapped range")
     return [x for x in rv if x[0] != x[1]]
 
 def main():
