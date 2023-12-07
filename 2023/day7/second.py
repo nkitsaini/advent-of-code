@@ -59,7 +59,7 @@ def get_hand_score(card: str):
 def get_hand_score_complex(card: str):
     for idx in range(len(card)):
         if card[idx] == 'J':
-            new_card = 
+            new_card = card[:idx] + 'J' + card[idx+1:]
     # if len(set(card)) == 1:
     #     return '6' + card
     # if max(counts.values()) == 4:
