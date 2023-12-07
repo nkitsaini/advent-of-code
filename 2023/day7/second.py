@@ -62,7 +62,7 @@ def get_hand_score_complex(card: str, min_idx=0):
     if 'J' not in card:
         return get_hand_score(card)
     for idx in range(len(card)):
-        if min_idx >= idx:
+        if min_idx > idx:
             continue
         if card[idx] == 'J':
             for pcard in CARD_ORDERS:
