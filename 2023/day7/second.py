@@ -40,11 +40,11 @@ def get_hand_score(card: str):
     # ...........
     counts = Counter(card)
     if len(set(card)) == 1:
-        return '0' + card[0]
+        return '0' + card
     if max(counts.values()) == 4:
-        return '1' + [x for x in counts.keys() if counts[x] == 4][0]
+        return '1' + card
     if sorted(counts.values()) == [2, 3]:
-        return '2' + [x for x in counts.keys() if counts[x] == 4][0]
+        return '2' + card
 
 def trim_split(value: str, sep: str = " ", remove_empty: bool = True) -> List[str]:
     rv = []
