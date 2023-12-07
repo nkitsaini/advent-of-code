@@ -38,9 +38,6 @@ def trim_split(value: str, sep: str = " ", remove_empty: bool = True) -> List[st
 def solve_quadratics(a, b, c) -> Tuple[float, float]:
     x = Symbol('x')
     return tuple(solve(a*x*x + b*x, +c, 0))
-
-    ...
-
 def main():
     # Raw Text
     content = sys.stdin.read()
