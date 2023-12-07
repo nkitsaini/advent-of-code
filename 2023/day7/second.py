@@ -65,7 +65,7 @@ def get_hand_score_complex(card: str):
         if card[idx] == 'J':
             for pcard in CARD_ORDERS:
                 new_card = card[:idx] + pcard + card[idx+1:]
-                score = get_hand_score(new_card)
+                score = get_hand_score_complex(new_card)
                 if score > max_score:
                     max_score = score
     return max_score
