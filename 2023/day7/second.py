@@ -53,6 +53,7 @@ def get_hand_score(card: str):
         return '5' + card
     if sorted(counts.values()) == [1, 1, 1, 1, 1]:
         return '6' + card
+    raise Exception()
 
 def trim_split(value: str, sep: str = " ", remove_empty: bool = True) -> List[str]:
     rv = []
