@@ -81,11 +81,12 @@ def main():
         card, amount = line.split()
         cards.append((card, int(amount)))
     cards.sort(key=lambda x: get_card_score(x[0]))
+    print(cards)
     for idx, (card, amount) in enumerate(cards):
-        ans
+        ans += (idx +1) * amount
 
 
-    print(array)
+    # print(array)
     print(ans)
     
 
