@@ -1,7 +1,8 @@
 import sys
 import re
 from pprint import pprint
-import sympy
+from sympy.solvers import solve
+from sympy import Symbol
 from collections import *
 import string
 from typing import *
@@ -33,6 +34,10 @@ DIRECTIONS_EDGE = [
 def trim_split(value: str, sep: str = " ", remove_empty: bool = True) -> List[str]:
     rv = []
     return [x.strip() for x in value.strip().split(sep) if x.strip() != ""]
+
+def solve_quadratics(a, b, c) -> Tuple[float, float]:
+
+    ...
 
 def main():
     # Raw Text
