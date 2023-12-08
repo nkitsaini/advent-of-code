@@ -83,6 +83,7 @@ def main():
                 steps_until_z[value].append(idx)
             if current == value:
                 break
+
         
 
     
