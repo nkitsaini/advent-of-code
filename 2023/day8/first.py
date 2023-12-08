@@ -27,6 +27,7 @@ def compute_lcm(x, y):
    return lcm
 
 def lcm_all(*args: int):
+    args = list(args)
     while len(args) > 1:
         last = args.pop()
         last2 = args.pop()
