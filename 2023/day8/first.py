@@ -57,7 +57,7 @@ def main():
     ans = 0
     array = []
 
-    cards = []
+    instructions = lines[0].strip()
     for idx, line in enumerate(lines):
         ...
 
