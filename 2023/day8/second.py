@@ -78,6 +78,7 @@ def main():
             elif instruct == "R":
                 current = graph[current]['right']
             else:
+                print(instruct)
                 raise Exception()
             if current[2] == 'Z':
                 steps_until_z[value].append(idx)
