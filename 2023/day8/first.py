@@ -93,9 +93,11 @@ def main():
             if current[2] == 'Z':
                 steps_until_z[value].append(idx)
 
-            if current in founds and (idx + 1) % len(instructions) == 0:
-                break
-            founds.add(current)
+            if ((idx + 1) % len(instructions) == 0):
+                if current in founds:
+                    break
+                else:
+                    founds.add(current)
 
     print(steps_until_z)
     return
