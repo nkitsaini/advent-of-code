@@ -31,68 +31,12 @@ DIRECTIONS_EDGE = [
     (1, 1),
 ]
 
-# CARD_ORDERS = ['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2']
-CARD_ORDERS = ['A', 'K', 'Q', 'T', '9', '8', '7', '6', '5', '4', '3', '2', 'J']
-
-def get_card_score(card: str):
-    return CARD_ORDERS.index(card)
-
-def get_hand_score(card: str, orig: str):
-    # ...........
-    counts = Counter(card)
-    card_map = ''.join([chr(ord('a') + get_card_score(x)) for x in orig])
-    if sorted(counts.values()) == [5]:
-        return '0' + card_map
-    if sorted(counts.values()) == [1,4]:
-        return '1' + card_map
-    if sorted(counts.values()) == [2, 3]:
-        return '2' + card_map
-    if sorted(counts.values()) == [1, 1, 3]:
-        return '3' + card_map
-    if sorted(counts.values()) == [1, 2, 2]:
-        return '4' + card_map
-    if sorted(counts.values()) == [1, 1, 1, 2]:
-        return '5' + card_map
-    if sorted(counts.values()) == [1, 1, 1, 1, 1]:
-        return '6' + card_map
-
-def get_hand_score_complex(card: str, orig: str|None = None, min_idx=0):
-    max_score = 'zzzzz'
-    max_card = ''
-    if orig is None:
-        orig = card
-    if 'J' not in card:
-        return get_hand_score(card, orig)
-    for idx in range(len(card)):
-        if min_idx > idx:
-            continue
-        if card[idx].upper() == 'J':
-            for pcard in CARD_ORDERS:
-                new_card = card[:idx] + pcard + card[idx+1:]
-                score = get_hand_score_complex(new_card.upper(), orig, idx + 1)
-                print(score, new_card)
-                max_score = min(score, max_score)
-                # if score > max_score:
-                #     max_score = score
-    return max_score
-
-    # if len(set(card)) == 1:
-    #     return '6' + card
-    # if max(counts.values()) == 4:
-    #     return '5' + card
-    # if sorted(counts.values()) == [2, 3]:
-    #     return '4' + card
-    # if sorted(counts.values()) == [1, 1, 3]:
-    #     return '3' + card
-    # if sorted(counts.values()) == [1, 2, 2]:
-    #     return '2' + card
-    # if sorted(counts.values()) == [1, 1, 1, 2]:
-    #     return '1' + card
-    # if sorted(counts.values()) == [1, 1, 1, 1, 1]:
-    #     return '0' + card
-    raise Exception()
 
 def trim_split(value: str, sep: str = " ", remove_empty: bool = True) -> List[str]:
+    rv = []
+    return [x.strip() for x in value.strip().split(sep) if x.strip() != ""]
+
+def trim_int(value: str, sep: str = " ", remove_empty: bool = True) -> List[str]:
     rv = []
     return [x.strip() for x in value.strip().split(sep) if x.strip() != ""]
 
