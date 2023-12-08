@@ -64,7 +64,8 @@ def main():
     
     for idx, line in enumerate(lines[2:]):
         src, nexts = trim_split(line, "=")
-        ...
+        left, right = trim_split(nexts.strip("(").strip(")"), ",")
+        graph[src] = {"left": left, "right": right}
 
     print(array)
     print(ans)
