@@ -99,7 +99,7 @@ def main():
                 else:
                     founds.add(current)
 
-    print(steps_until_z)
+    print(steps_until_z.values())
     return
 
 
