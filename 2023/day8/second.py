@@ -84,10 +84,8 @@ def main():
                 elif instruct == "R":
                     current = graph[current]['right']
                 else:
-                    alksdfjsadkf
-                if current == "ZZZ":
-                    found = True
-                    break
+                    raise Exception()
+            
 
 
         
