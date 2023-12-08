@@ -27,10 +27,10 @@ def compute_lcm(x, y):
    return lcm
 
 def lcm_all(*args: int):
-    args = list(args)
-    while len(args) > 1:
-        last = args.pop()
-        last2 = args.pop()
+    arg = list(args)
+    while len(arg) > 1:
+        last = arg.pop()
+        last2 = arg.pop()
         
 
 
