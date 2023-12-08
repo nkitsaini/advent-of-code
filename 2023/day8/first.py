@@ -12,7 +12,6 @@ from typing import *
 # Python Program to find the L.C.M. of two input number
 
 def compute_lcm(x, y):
-
    # choose the greater number
    if x > y:
        greater = x
