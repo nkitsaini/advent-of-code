@@ -81,6 +81,8 @@ def main():
                 raise Exception()
             if current[2] == 'Z':
                 steps_until_z[value].append(idx)
+            if current == value:
+                break
         
 
     
