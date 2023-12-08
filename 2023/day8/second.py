@@ -78,6 +78,10 @@ def main():
                 current = graph[current].right
             else:
                 alksdfjsadkf
+            if current = "ZZZ":
+                break
+
+
         
 
     print(array)
