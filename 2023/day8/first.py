@@ -84,6 +84,8 @@ def main():
             if current == value:
                 break
 
+    print(steps_until_z)
+    return
 
 
     
