@@ -91,8 +91,10 @@ def main():
                 raise Exception()
             if current[2] == 'Z':
                 steps_until_z[value].append(idx)
-            if current == value:
+
+            if current in founds:
                 break
+            founds.add(current)
 
     print(steps_until_z)
     return
