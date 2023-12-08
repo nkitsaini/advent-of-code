@@ -70,6 +70,13 @@ def main():
 
     values = [k for k in graph.keys() if k.endswith("A")]
     steps_until_z: DefaultDict[str, List[int]] = defaultdict(list)
+
+    def rep(values):
+        while True:
+            for val in values:
+                yield val
+        
+    
     for value in values:
         current = value
         for idx, instruct in enumerate(itertools.repeat(instructions)):
