@@ -67,13 +67,14 @@ def main():
         left, right = trim_split(nexts.strip("(").strip(")"), ",")
         graph[src] = {"left": left, "right": right}
 
-    current = [k for k in graph.keys() if k.endswith("A")]
+    values = [k for k in graph.keys() if k.endswith("A")]
 
     i = 0
     found = False
     while not found:
         for instruct in instructions:
             i += 1
+            for current in values:
             print("== current", current,  instruct)
             if current == "ZZZ":
                 found = True
