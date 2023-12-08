@@ -68,6 +68,9 @@ def main():
         graph[src] = {"left": left, "right": right}
 
     values = [k for k in graph.keys() if k.endswith("A")]
+    steps_until_z = defaultdict(list)
+
+    
 
     def is_found():
         for val in values:
