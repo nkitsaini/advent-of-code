@@ -73,14 +73,12 @@ def main():
     for value in values:
         current = value
         for instruct in enumerate(itertools.repeat(instructions)):
-            next_values = []
             if instruct == "L":
                 current = graph[current]['left']
             elif instruct == "R":
                 current = graph[current]['right']
             else:
                 raise Exception()
-            next_values.append(current)
             if current[2] == 'Z':
                 found = True
                 break
