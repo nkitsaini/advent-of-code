@@ -79,7 +79,7 @@ def main():
     
     for value in values:
         current = value
-        for idx, instruct in enumerate(itertools.repeat(instructions)):
+        for idx, instruct in enumerate(rep(instructions)):
             if instruct == "L":
                 current = graph[current]['left']
             elif instruct == "R":
