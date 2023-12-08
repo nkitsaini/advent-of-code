@@ -74,7 +74,7 @@ def main():
     while not found:
         i += 1
         for instruct in instructions:
-            print("== current", instruct)
+            print("== current", current,  instruct)
             if current == "ZZZ":
                 found = True
                 break
