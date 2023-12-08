@@ -127,6 +127,8 @@ def main():
 
     print(steps_until_z)
     print(steps_until_z.values())
+    print(lcm_all(2, 7))
+    print(lcm_all(*steps_until_z.values()))
     return
 
 
