@@ -67,6 +67,8 @@ def main():
         left, right = trim_split(nexts.strip("(").strip(")"), ",")
         graph[src] = {"left": left, "right": right}
 
+    current = "AAA"
+
     print(array)
     print(ans)
     
