@@ -85,6 +85,7 @@ def main():
             if current == "ZZZ":
                 found = True
                 break
+        i += 1
 
 
         
