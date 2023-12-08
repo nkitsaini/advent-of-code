@@ -80,7 +80,7 @@ def main():
     for value in values:
         print("--- value", value)
         current = value
-        founds = set()
+        founds = set([value])
         for idx, instruct in enumerate(rep(instructions)):
             if instruct == "L":
                 current = graph[current]['left']
