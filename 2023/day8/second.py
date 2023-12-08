@@ -1,89 +1,12 @@
+# I do not use all the imports, but keep them if required
+import math
 import sys
 import itertools
 import re
 from pprint import pprint
-# from sympy.solvers import solve
-# from sympy import Symbol
 from collections import *
 import string
 from typing import *
-
-
-# Python Program to find the L.C.M. of two input number
-
-# def compute_lcm(x, y):
-#    # choose the greater number
-#    if x > y:
-#        greater = x
-#    else:
-#        greater = y
-
-#    while(True):
-#        if((greater % x == 0) and (greater % y == 0)):
-#            lcm = greater
-#            break
-#        greater += 1
-
-#    return lcm
-
-        
-# Python program to find the L.C.M. of two input number
-
-# This function computes GCD 
-def compute_gcd(x, y):
-
-   while(y):
-       x, y = y, x % y
-   return x
-
-# This function computes LCM
-def compute_lcm(x, y):
-   lcm = (x*y)//compute_gcd(x,y)
-   return lcm
-
-def lcm_all(*args: int):
-    arg = list(args)
-    while len(arg) > 1:
-        print('sr', len(arg))
-        last = arg.pop()
-        last2 = arg.pop()
-        arg.append(compute_lcm(last, last2))
-    return arg[0]
-
-T = TypeVar('T')
-def dbg(val: T) -> T:
-    print('---', val, file=sys.stderr)
-    return val
-
-DIRECTION_NAME = {
-    "right": (0, 1),
-    "left": (0, -1),
-    "up": (-1, 0),
-    "down": (1, 0),
-}
-DIRECTION_NAME_REVERSED = {v: k for k, v in DIRECTION_NAME.items()}
-
-DIRECTIONS = list(DIRECTION_NAME_REVERSED.keys())
-DIRECTIONS_EDGE = [
-    *DIRECTIONS,
-    (1, -1),
-    (-1, 1),
-    (-1, -1),
-    (1, 1),
-]
-
-
-def trim_split(value: str, sep: str = " ", remove_empty: bool = True) -> List[str]:
-    rv = []
-    return [x.strip() for x in value.strip().split(sep) if not remove_empty or x.strip() != ""]
-
-def split_int(value: str, sep: str = " ") -> List[int]:
-    rv = []
-    return [int(x.strip()) for x in value.strip().split(sep) if x.strip() != ""]
-
-# def solve_quadratics(a, b, c) -> Tuple[float, float]:
-#     x = Symbol('x')
-#     return tuple(solve(a*x*x + b*x, +c, 0))
 
 
 def main():
@@ -96,98 +19,91 @@ def main():
     # each block (splitted by empty line)
     splits = content.split('\n\n')
 
-    ans = 0
-    array = []
 
-    instructions = lines[0].strip()
-    graph = defaultdict()
+    """
+    I'll store nodes here like
 
+    {
+        11A: {
+            left: 11B
+            right: 11C
+        },
+        11B: {
+            left: 11A
+            right: 11Z
+        },
+        ...
+    }
     
+    """
+    nodes: DefaultDict[str, Dict] = defaultdict(dict) # defaultdict is a very simple thing, just ask phind
+
+    # First line contains instruction
+    instructions = lines[0]
+
+    # Start from second line to match the nodes
     for idx, line in enumerate(lines[2:]):
-        src, nexts = trim_split(line, "=")
-        left, right = trim_split(nexts.strip("(").strip(")"), ",")
-        graph[src] = {"left": left, "right": right}
+        # Two ways:
+        # 1. Split using `=` sign, then remove `()` using `.strip()`, then again split using `,`
+        # 2. Use regex (watch a video on regex, if you have never heard the name before)
+        # Here I am using regex as you might already be familiar with approach 1 (which I had also used to solve the question initially)
+        # 
+        # **BEFORE GOING AHEAD**: Try to see what regex you will write to match the given into. Example: "abc = (xyz, ade)"
 
-    values = [k for k in graph.keys() if k.endswith("A")]
-    steps_until_z: DefaultDict[str, List[int]] = defaultdict(list)
+        # .* is always matching three characters here
+        # We use paranthesis `()` to capture the values, whatever is in paranthesis, we can get it using match.groups(1) or match.groups(2)
+        # "\(" and "\)" will match `)` and `(`. We are using `\` to tell regex that these are normal brackets not the captures/groups as above
+        # `,` and ` ` (space) work as expected
+        # Example "abc = (xyz, ade)"
+        pattern = r"(.*) = \((.*), (.*)\)"
+        match = re.fullmatch(pattern, line)
 
-    def rep(values):
-        while True:
-            for val in values:
-                yield val
-        
-    
-    for value in values:
-        print("--- value", value)
-        current = value
-        founds = set([value])
-        for idx, instruct in enumerate(rep(instructions)):
-            if instruct == "L":
-                current = graph[current]['left']
-            elif instruct == "R":
-                current = graph[current]['right']
-            else:
-                print(instruct)
-                raise Exception()
+        # confirm that a match was found (as we expect)
+        assert match is not None
 
-            if current[2] == 'Z':
-                steps_until_z[value].append(idx + 1)
-            if ((idx + 1) % len(instructions) == 0):
-                # print(current)
-                if current in founds:
+        node = match.group(1)
+        left = match.group(2)
+        right = match.group(3)
+
+        nodes[node] = {
+            "left": left,
+            "right": right
+        }
+
+    starting_nodes = [node for node in nodes.keys() if node.endswith('A')]
+
+    steps_until_z: DefaultDict[str, List[int]] = defaultdict(list) # 11A: [3, 17, 19]
+
+
+    for node in starting_nodes:
+        visited = set()
+        current_node = node
+
+        for index, instruction in enumerate(itertools.cycle(instructions)):
+            if instruction == "R":
+                current_node = nodes[current_node]['right']
+            elif instruction == "L":
+                current_node = nodes[current_node]['left']
+
+            if current_node.endswith('Z'):
+                steps_until_z[node].append(index + 1)
+
+            if (index +1) % len(instructions) == 0:
+                if current_node in visited:
                     break
-                else:
-                    founds.add(current)
-
-    print(steps_until_z)
-    print(steps_until_z.values())
-    print(lcm_all(2, 7))
-    print(lcm_all(*[l[0] for l in steps_until_z.values()]))
-    return
+                visited.add(current_node)
 
 
-    
 
-    def is_found():
-        for val in values:
-            if val[2] != "Z":
-                return False
-        return True
+    numbers = []
+    for value in steps_until_z.values():
+        # Important: value only has one element, so we don't need to check others
+        numbers.append(value[0])
 
-    i = 0
-    found = False
-    while not found:
-        for instruct in instructions:
-            i += 1
-            if is_found():
-                found = True
-                break
-            next_values = []
-            for current in values:
-                if instruct == "L":
-                    current = graph[current]['left']
-                elif instruct == "R":
-                    current = graph[current]['right']
-                else:
-                    raise Exception()
-                next_values.append(current)
-            values = next_values
-        if is_found():
-            found = True
-            break
-            
+    # LCM
+    print(math.lcm(*numbers))
 
 
-        
-
-    print(array)
-    print(i)
-    
-
-    
-def repl():
-    ...
 
 if __name__ == "__main__":
-    # repl()
     main()
