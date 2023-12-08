@@ -72,8 +72,8 @@ def main():
     i = 0
     found = False
     while not found:
-        i += 1
         for instruct in instructions:
+            i += 1
             print("== current", current,  instruct)
             if current == "ZZZ":
                 found = True
