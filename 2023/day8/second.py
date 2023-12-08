@@ -75,7 +75,6 @@ def main():
         for instruct in instructions:
             i += 1
             for current in values:
-            print("== current", current,  instruct)
                 if current == "ZZZ":
                     found = True
                     break
