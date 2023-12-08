@@ -78,7 +78,7 @@ def main():
                 current = graph[current].right
             else:
                 alksdfjsadkf
-            if current = "ZZZ":
+            if current == "ZZZ":
                 break
 
 
