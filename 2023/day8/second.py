@@ -69,13 +69,19 @@ def main():
 
     values = [k for k in graph.keys() if k.endswith("A")]
 
+    def is_found():
+        for val in values:
+            if val[2] != "Z":
+                return False
+        return True
+
     i = 0
     found = False
     while not found:
         for instruct in instructions:
             i += 1
             for current in values:
-                if current == "ZZZ":
+                if is_found():
                     found = True
                     break
                 if instruct == "L":
@@ -84,6 +90,9 @@ def main():
                     current = graph[current]['right']
                 else:
                     raise Exception()
+        if is_found():
+            found = True
+            break
             
 
 
