@@ -31,6 +31,8 @@ def lcm_all(*args: int):
     while len(arg) > 1:
         last = arg.pop()
         last2 = arg.pop()
+        arg.append(compute_lcm(last, last2))
+    return arg[0]
         
 
 
