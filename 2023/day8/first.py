@@ -76,18 +76,18 @@ def main():
             i += 1
             for current in values:
             print("== current", current,  instruct)
-            if current == "ZZZ":
-                found = True
-                break
-            if instruct == "L":
-                current = graph[current]['left']
-            elif instruct == "R":
-                current = graph[current]['right']
-            else:
-                alksdfjsadkf
-            if current == "ZZZ":
-                found = True
-                break
+                if current == "ZZZ":
+                    found = True
+                    break
+                if instruct == "L":
+                    current = graph[current]['left']
+                elif instruct == "R":
+                    current = graph[current]['right']
+                else:
+                    alksdfjsadkf
+                if current == "ZZZ":
+                    found = True
+                    break
 
 
         
