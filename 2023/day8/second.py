@@ -1,4 +1,5 @@
 import sys
+import itertools
 import re
 from pprint import pprint
 # from sympy.solvers import solve
@@ -74,7 +75,7 @@ def main():
         first = True
         while current != value and not first:
             first = False
-            for instruct in instructions:
+            for instruct in enumerate(itertools.repeat(instructions)):
                 next_values = []
                 for current in values:
                     if instruct == "L":
@@ -85,7 +86,7 @@ def main():
                         raise Exception()
                     next_values.append(current)
                 values = next_values
-            if is_found():
+            if current[2] == 'Z':
                 found = True
                 break
         
