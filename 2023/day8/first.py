@@ -58,6 +58,9 @@ def main():
     array = []
 
     instructions = lines[0].strip()
+    graph = defaultdict()
+
+    
     for idx, line in enumerate(lines):
         ...
 
