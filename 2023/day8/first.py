@@ -70,8 +70,12 @@ def main():
     current = "AAA"
 
     i = 1
-    while True:
+    found = False
+    while not found:
         for instruct in instructions:
+            if current == "ZZZ":
+                found = True
+                break
             if instruct == "L":
                 current = graph[current].left
             elif instruct == "R":
@@ -79,6 +83,7 @@ def main():
             else:
                 alksdfjsadkf
             if current == "ZZZ":
+                found = True
                 break
 
 
