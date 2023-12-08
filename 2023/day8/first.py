@@ -83,6 +83,7 @@ def main():
             if is_found():
                 found = True
                 break
+            next_values = []
             for current in values:
                 if instruct == "L":
                     current = graph[current]['left']
@@ -90,6 +91,8 @@ def main():
                     current = graph[current]['right']
                 else:
                     raise Exception()
+                next_values.append(current)
+            values = next_values
         if is_found():
             found = True
             break
