@@ -67,7 +67,7 @@ def main():
         left, right = trim_split(nexts.strip("(").strip(")"), ",")
         graph[src] = {"left": left, "right": right}
 
-    current = "AAA"
+    current = []
 
     i = 0
     found = False
