@@ -36,9 +36,9 @@ def trim_split(value: str, sep: str = " ", remove_empty: bool = True) -> List[st
     rv = []
     return [x.strip() for x in value.strip().split(sep) if x.strip() != ""]
 
-def trim_int(value: str, sep: str = " ", remove_empty: bool = True) -> List[str]:
+def split_int(value: str, sep: str = " ") -> List[int]:
     rv = []
-    return [x.strip() for x in value.strip().split(sep) if x.strip() != ""]
+    return [int(x.strip()) for x in value.strip().split(sep) if x.strip() != ""]
 
 # def solve_quadratics(a, b, c) -> Tuple[float, float]:
 #     x = Symbol('x')
