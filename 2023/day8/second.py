@@ -78,6 +78,7 @@ def main():
         
     
     for value in values:
+        print("--- value", value)
         current = value
         for idx, instruct in enumerate(rep(instructions)):
             if instruct == "L":
