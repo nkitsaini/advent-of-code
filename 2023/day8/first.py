@@ -67,7 +67,7 @@ def main():
         left, right = trim_split(nexts.strip("(").strip(")"), ",")
         graph[src] = {"left": left, "right": right}
 
-    current = []
+    current = [k for k in graph.keys() if k.endswith("A")]
 
     i = 0
     found = False
