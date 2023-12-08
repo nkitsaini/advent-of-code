@@ -72,7 +72,7 @@ def main():
     steps_until_z: DefaultDict[str, List[int]] = defaultdict(list)
     for value in values:
         current = value
-        for idx, instruct in enumerate(itertools.repeat(list(instructions))):
+        for idx, instruct in enumerate(itertools.repeat(instructions)):
             if instruct == "L":
                 current = graph[current]['left']
             elif instruct == "R":
