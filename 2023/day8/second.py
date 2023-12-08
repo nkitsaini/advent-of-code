@@ -61,7 +61,7 @@ def main():
     for idx, line in enumerate(lines):
         ...
 
-    # print(array)
+    print(array)
     print(ans)
     
 
