@@ -71,7 +71,7 @@ def main():
     steps_until_z = defaultdict(list)
     for value in values:
         current = value
-        while current != vlaue:
+        while current != value:
         for instruct in instructions:
             i += 1
             if is_found():
