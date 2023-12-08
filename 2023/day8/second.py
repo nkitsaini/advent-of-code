@@ -70,6 +70,8 @@ def main():
     values = [k for k in graph.keys() if k.endswith("A")]
     steps_until_z = defaultdict(list)
     for value in values:
+        current = value
+        while current != vlaue:
         for instruct in instructions:
             i += 1
             if is_found():
