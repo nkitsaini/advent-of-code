@@ -44,6 +44,7 @@ def split_int(value: str, sep: str = " ") -> List[int]:
 #     x = Symbol('x')
 #     return tuple(solve(a*x*x + b*x, +c, 0))
 
+
 def main():
     # Raw Text
     content = sys.stdin.read()
@@ -61,7 +62,8 @@ def main():
     graph = defaultdict()
 
     
-    for idx, line in enumerate(lines):
+    for idx, line in enumerate(lines[2:]):
+        src, nexts = trim_split(line, "=")
         ...
 
     print(array)
