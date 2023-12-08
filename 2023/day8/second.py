@@ -11,19 +11,34 @@ from typing import *
 
 # Python Program to find the L.C.M. of two input number
 
+# def compute_lcm(x, y):
+#    # choose the greater number
+#    if x > y:
+#        greater = x
+#    else:
+#        greater = y
+
+#    while(True):
+#        if((greater % x == 0) and (greater % y == 0)):
+#            lcm = greater
+#            break
+#        greater += 1
+
+#    return lcm
+
+        
+# Python program to find the L.C.M. of two input number
+
+# This function computes GCD 
+def compute_gcd(x, y):
+
+   while(y):
+       x, y = y, x % y
+   return x
+
+# This function computes LCM
 def compute_lcm(x, y):
-   # choose the greater number
-   if x > y:
-       greater = x
-   else:
-       greater = y
-
-   while(True):
-       if((greater % x == 0) and (greater % y == 0)):
-           lcm = greater
-           break
-       greater += 1
-
+   lcm = (x*y)//compute_gcd(x,y)
    return lcm
 
 def lcm_all(*args: int):
@@ -34,8 +49,6 @@ def lcm_all(*args: int):
         last2 = arg.pop()
         arg.append(compute_lcm(last, last2))
     return arg[0]
-        
-
 
 T = TypeVar('T')
 def dbg(val: T) -> T:
