@@ -69,7 +69,7 @@ def main():
         graph[src] = {"left": left, "right": right}
 
     values = [k for k in graph.keys() if k.endswith("A")]
-    steps_until_z: DefaultDict[List[int]] = defaultdict(list)
+    steps_until_z: DefaultDict[str, List[int]] = defaultdict(list)
     for value in values:
         current = value
         for idx, instruct in enumerate(itertools.repeat(instructions)):
@@ -81,8 +81,6 @@ def main():
                 raise Exception()
             if current[2] == 'Z':
                 steps_until_z[value].append(idx)
-                found = True
-                break
         
 
     
