@@ -80,10 +80,10 @@ def main():
     while not found:
         for instruct in instructions:
             i += 1
+            if is_found():
+                found = True
+                break
             for current in values:
-                if is_found():
-                    found = True
-                    break
                 if instruct == "L":
                     current = graph[current]['left']
                 elif instruct == "R":
