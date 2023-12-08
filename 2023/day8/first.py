@@ -71,25 +71,27 @@ def main():
     steps_until_z = defaultdict(list)
     for value in values:
         current = value
-        while current != value:
-        for instruct in instructions:
-            i += 1
+        first = True
+        while current != value and not first:
+            first = False
+            for instruct in instructions:
+                i += 1
+                if is_found():
+                    found = True
+                    break
+                next_values = []
+                for current in values:
+                    if instruct == "L":
+                        current = graph[current]['left']
+                    elif instruct == "R":
+                        current = graph[current]['right']
+                    else:
+                        raise Exception()
+                    next_values.append(current)
+                values = next_values
             if is_found():
                 found = True
                 break
-            next_values = []
-            for current in values:
-                if instruct == "L":
-                    current = graph[current]['left']
-                elif instruct == "R":
-                    current = graph[current]['right']
-                else:
-                    raise Exception()
-                next_values.append(current)
-            values = next_values
-        if is_found():
-            found = True
-            break
         
 
     
