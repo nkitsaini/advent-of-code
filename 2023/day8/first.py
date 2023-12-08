@@ -69,6 +69,17 @@ def main():
 
     current = "AAA"
 
+    i = 1
+    while True:
+        for instruct in instructions:
+            if instruct == "L":
+                current = graph[current].left
+            elif instruct == "R":
+                current = graph[current].right
+            else:
+                alksdfjsadkf
+        
+
     print(array)
     print(ans)
     
