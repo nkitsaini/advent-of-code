@@ -78,9 +78,9 @@ def main():
                 found = True
                 break
             if instruct == "L":
-                current = graph[current].left
+                current = graph[current]['left']
             elif instruct == "R":
-                current = graph[current].right
+                current = graph[current]['right']
             else:
                 alksdfjsadkf
             if current == "ZZZ":
