@@ -34,7 +34,7 @@ DIRECTIONS_EDGE = [
 
 def trim_split(value: str, sep: str = " ", remove_empty: bool = True) -> List[str]:
     rv = []
-    return [x.strip() for x in value.strip().split(sep) if x.strip() != ""]
+    return [x.strip() for x in value.strip().split(sep) if not remove_empty or x.strip() != ""]
 
 def split_int(value: str, sep: str = " ") -> List[int]:
     rv = []
