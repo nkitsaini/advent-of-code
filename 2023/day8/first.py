@@ -69,9 +69,10 @@ def main():
 
     current = "AAA"
 
-    i = 1
+    i = 0
     found = False
     while not found:
+        i += 1
         for instruct in instructions:
             if current == "ZZZ":
                 found = True
@@ -85,13 +86,12 @@ def main():
             if current == "ZZZ":
                 found = True
                 break
-        i += 1
 
 
         
 
     print(array)
-    print(ans)
+    print(i)
     
 
     
