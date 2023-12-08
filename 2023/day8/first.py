@@ -75,10 +75,6 @@ def main():
         while current != value and not first:
             first = False
             for instruct in instructions:
-                i += 1
-                if is_found():
-                    found = True
-                    break
                 next_values = []
                 for current in values:
                     if instruct == "L":
