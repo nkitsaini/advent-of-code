@@ -72,7 +72,7 @@ def main():
     steps_until_z = defaultdict(list)
     for value in values:
         current = value
-        for instruct in enumerate(itertools.repeat(instructions)):
+        for idx, instruct in enumerate(itertools.repeat(instructions)):
             if instruct == "L":
                 current = graph[current]['left']
             elif instruct == "R":
@@ -80,6 +80,7 @@ def main():
             else:
                 raise Exception()
             if current[2] == 'Z':
+                steps_until_z[value].append(idx)
                 found = True
                 break
         
