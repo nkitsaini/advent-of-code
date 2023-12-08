@@ -117,7 +117,7 @@ def main():
                 raise Exception()
 
             if current[2] == 'Z':
-                steps_until_z[value].append(idx)
+                steps_until_z[value].append(idx + 1)
             if ((idx + 1) % len(instructions) == 0):
                 # print(current)
                 if current in founds:
